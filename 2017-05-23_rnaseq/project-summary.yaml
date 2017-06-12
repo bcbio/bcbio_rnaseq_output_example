@@ -38,7 +38,6 @@ samples:
     batch: null
     group: ctrl
     phenotype: ''
-    sex: f
   sam_ref: /groups/bcbio/bcbio_dev/genomes/Mmusculus/mm10/seq/mm10.fa
   summary:
     metrics:
@@ -95,7 +94,6 @@ samples:
     batch: null
     group: ctrl
     phenotype: ''
-    sex: f
   sam_ref: /groups/bcbio/bcbio_dev/genomes/Mmusculus/mm10/seq/mm10.fa
   summary:
     metrics:
@@ -152,7 +150,6 @@ samples:
     batch: null
     group: ko
     phenotype: ''
-    sex: f
   sam_ref: /groups/bcbio/bcbio_dev/genomes/Mmusculus/mm10/seq/mm10.fa
   summary:
     metrics:
@@ -209,7 +206,6 @@ samples:
     batch: null
     group: ko
     phenotype: ''
-    sex: f
   sam_ref: /groups/bcbio/bcbio_dev/genomes/Mmusculus/mm10/seq/mm10.fa
   summary:
     metrics:
