@@ -21,7 +21,7 @@ opts_chunk$set(
     warning = FALSE)
 
 # parameters =====
-upload_dir <- "../" # bcbio_path_final_folder
+upload_dir <- "../bcbio_rnaseq_output_example" # bcbio_path_final_folder
 genotype <- "group" # variable in metadata you want to use, example group
 out_path <- "." # where to save all output
 # bcbioRnaseq ====
