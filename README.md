@@ -6,9 +6,6 @@ This repo contains example output data from a bcbio RNAseq analysis. It's being 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-
-```
 
 ### Support or Contact
 
