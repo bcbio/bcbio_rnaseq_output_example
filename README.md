@@ -1,11 +1,6 @@
 ## Welcome to GitHub Pages
 
-This repo contains example output data from a bcbio RNAseq analysis. It's being used to test bcbioRnaseq R package to continue with the analysis and it keeps a copy of the last report that it generates.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+This repo contains example output data from a bcbio RNAseq analysis. It's being used to test [bcbioRnaseq](https://github.com/hbc/bcbioRnaseq) R package to continue with the analysis and it keeps a copy of the last report that it generates.
 
 ### Support or Contact
 
