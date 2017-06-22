@@ -32,9 +32,9 @@ res_out <- file.path(out_path, "results", "de")
 if (file.exists(file.path(data_out, "bcb.rda"))) {
     load(file.path(data_out, "bcb.rda"))
 } else {
-    bcb <- load_run_S4(
-        file.path(upload_dir),
-        intgroup = c(genotype))
+    bcb <- load_run(
+        upload_dir = file.path(upload_dir),
+        interesting_groups = c(genotype))
     save_data(bcb, dir=data_out)
 }
 
