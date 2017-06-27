@@ -24,6 +24,17 @@ opts_chunk$set(
 upload_dir <- "../bcbio_rnaseq_output_example" # bcbio_path_final_folder
 genotype <- "group" # variable in metadata you want to use, example group
 out_path <- "." # where to save all output
+
+# Contrast
+# 1. Design matrix parameter.
+# 2. Numerator for LFC (expt).
+# 3. Denominator for LFC (control).
+# @seealso [DESeq2::results()]
+contrast <- c("group", "ko", "ctrl")
+
+# Design formula
+design <- formula(~group) # change to desire column
+
 # bcbioRnaseq ====
 data_out <- file.path(out_path, "data")
 count_out <- file.path(out_path, "results", "counts")
