@@ -36,21 +36,21 @@ contrast <- c("group", "ko", "ctrl")
 design <- formula(~group) # change to desire column
 
 # bcbioRnaseq ====
-data_out <- file.path(out_path, "data")
-count_out <- file.path(out_path, "results", "counts")
-res_out <- file.path(out_path, "results", "de")
+data_dir <- file.path(out_path, "data")
+count_dir <- file.path(out_path, "results", "counts")
+res_dir <- file.path(out_path, "results", "de")
 
-if (file.exists(file.path(data_out, "bcb.rda"))) {
-    load(file.path(data_out, "bcb.rda"))
+library(bcbioRnaseq)
+if (file.exists(file.path(data_dir, "bcb.rda"))) {
+    load(file.path(data_dir, "bcb.rda"))
 } else {
     bcb <- load_run(
         upload_dir = file.path(upload_dir),
         interesting_groups = c(genotype))
-    save_data(bcb, dir=data_out)
 }
 
-if (file.exists(file.path(data_out, "dds.rda")))
-    load(file.path(data_out, "dds.rda"))
+if (file.exists(file.path(data_dir, "dds.rda")))
+    load(file.path(data_dir, "dds.rda"))
 
-if (file.exists(file.path(data_out, "ddsde.rda")))
-    load(file.path(data_out, "ddsde.rda"))
+if (file.exists(file.path(data_dir, "ddsde.rda")))
+    load(file.path(data_dir, "ddsde.rda"))
