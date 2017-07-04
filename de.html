@@ -200,9 +200,9 @@ $(document).ready(function () {
 
 <span class="co"># Contrast. Uncomment with correct values.</span>
 <span class="co"># help(&quot;results&quot;, &quot;DESeq2&quot;)</span>
-<span class="co">#     1. Design matrix parameter.</span>
-<span class="co">#     2. Numerator for LFC (expt).</span>
-<span class="co">#     3. Denominator for LFC (control).</span>
+<span class="co">#   1. Design matrix parameter.</span>
+<span class="co">#   2. Numerator for LFC (expt).</span>
+<span class="co">#   3. Denominator for LFC (control).</span>
 <span class="co"># contrast &lt;- c(&quot;genotype&quot;, &quot;mutant&quot;, &quot;wildtype&quot;)</span>
 
 <span class="co"># Significance cutoffs</span>
@@ -320,7 +320,7 @@ lfc &lt;-<span class="st"> </span><span class="dv">0</span></code></pre></div>
 +<span class="st">     </span><span class="dt">contrast =</span> contrast,
 +<span class="st">     </span><span class="dt">res =</span> res_unshrunken)
 &gt;<span class="st"> </span>
-<span class="er">&gt;</span><span class="st"> </span><span class="co"># Compare these two results and pick which one to report</span>
+<span class="er">&gt;</span><span class="st"> </span><span class="co"># Use shrunken LFC values by default</span>
 <span class="er">&gt;</span><span class="st"> </span>res &lt;-<span class="st"> </span>res_shrunken
 &gt;<span class="st"> </span><span class="kw">save_data</span>(res, res_unshrunken, res_shrunken, <span class="dt">dir =</span> data_dir)</code></pre></div>
 <p>We performed the analysis using a BH adjusted <em>P</em> value cutoff of 0.05 and a log fold-change (LFC) ratio cutoff of 0.</p>
