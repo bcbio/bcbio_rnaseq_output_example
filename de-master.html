@@ -200,7 +200,7 @@ if (<span class="kw">file.exists</span>(<span class="st">&quot;setup.R&quot;</sp
 
 <span class="co"># Load bcbioRNADataSet</span>
 bcbName &lt;-<span class="st"> </span><span class="kw">load</span>(params$bcb)
-<span class="kw">assign</span>(<span class="st">&quot;bcb&quot;</span>, <span class="kw">get</span>(bcbName))
+<span class="kw">assign</span>(<span class="st">&quot;bcb&quot;</span>, <span class="kw">get</span>(bcbName, <span class="dt">inherits =</span> <span class="ot">FALSE</span>))
 <span class="kw">rm</span>(<span class="dt">list =</span> bcbName)
 if (!<span class="kw">is</span>(bcb, <span class="st">&quot;bcbioRNADataSet&quot;</span>)) {
     <span class="kw">stop</span>(<span class="st">&quot;bcb must bcbioRNADataSet class object&quot;</span>)
@@ -384,7 +384,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 <div id="r-session-information" class="section level1">
 <h1>R session information</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">sessionInfo</span>()</code></pre></div>
-<pre><code>## R Under development (unstable) (2017-09-07 r73217)
+<pre><code>## R Under development (unstable) (2017-09-08 r73220)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
 ## 
