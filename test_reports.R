@@ -5,11 +5,11 @@ library(bcbioRNASeq)
 test_that("qc_and_de", {
     unlink("report", recursive = TRUE)
     extraDir <- system.file("extra", package = "bcbioRNASeq")
-    reportDir <- file.path("..", "..", "bcbioRnaseq",
+    reportDir <- file.path("..", "..", "bcbioRNASeq",
         "inst", "rmarkdown",
         "templates", "quality_control",
         "skeleton")
-    miscDir <- file.path("..",  "..", "bcbioRnaseq", "docs", "downloads")
+    miscDir <- file.path("..",  "..", "bcbioRNASeq", "docs", "downloads")
     uploadDir <- tools::file_path_as_absolute(file.path("."))
     
     print(uploadDir)
@@ -27,7 +27,7 @@ test_that("qc_and_de", {
                                    interestingGroups = "group",
                                    outputDir = outputDir))
 
-    reportDir <- file.path("..",  "..", "bcbioRnaseq",
+    reportDir <- file.path("..",  "..", "bcbioRNASeq",
                            "inst", "rmarkdown",
                            "templates", "differential_expression",
                            "skeleton")
