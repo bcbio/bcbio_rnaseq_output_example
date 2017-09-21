@@ -13,18 +13,23 @@ test_that("qc_and_de", {
     uploadDir <- tools::file_path_as_absolute(file.path("."))
     
     print(uploadDir)
+    print(list.files(miscDir, full.names = TRUE))
 
     dir.create("report")
     setwd("report")
     outputDir <- tools::file_path_as_absolute(file.path("."))
-    print(list.files(miscDir, full.names = TRUE))
     file.copy(list.files(miscDir, full.names = TRUE), ".",
               overwrite = FALSE, recursive = TRUE)
-    print(file.path(reportDir, "skeleton.Rmd"))
     file.copy(file.path(reportDir, "skeleton.Rmd"), "qc.Rmd", overwrite = TRUE)
+    
+    library(bcbioRNASeq)
+    bcb <- loadRNASeqRun(
+                        uploadDir,
+                        interestingGroups = c("group")
+                         )
+    saveData(bcb, dir = "data")
 
-    render("qc.Rmd", params = list(uploadDir = uploadDir,
-                                   interestingGroups = "group",
+    render("qc.Rmd", params = list(bcbFile = bcb,
                                    outputDir = outputDir))
 
     reportDir <- file.path("..",  "..", "bcbioRNASeq",
