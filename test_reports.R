@@ -11,7 +11,7 @@ test_that("qc_and_de", {
         "skeleton")
     miscDir <- file.path("..",  "..", "bcbioRNASeq", "docs", "downloads")
     uploadDir <- tools::file_path_as_absolute(file.path("."))
-    
+
     print(uploadDir)
     print(list.files(miscDir, full.names = TRUE))
 
@@ -21,7 +21,7 @@ test_that("qc_and_de", {
     file.copy(list.files(miscDir, full.names = TRUE), ".",
               overwrite = FALSE, recursive = TRUE)
     file.copy(file.path(reportDir, "skeleton.Rmd"), "qc.Rmd", overwrite = TRUE)
-    
+
     library(bcbioRNASeq)
     bcb <- loadRNASeqRun(
                         uploadDir,
@@ -29,7 +29,7 @@ test_that("qc_and_de", {
                          )
     saveData(bcb, dir = "data")
 
-    render("qc.Rmd", params = list(bcbFile = bcb,
+    render("qc.Rmd", params = list(bcbFile = "data/bcb.rda",
                                    outputDir = outputDir))
 
     reportDir <- file.path("..",  "..", "bcbioRNASeq",
@@ -38,13 +38,14 @@ test_that("qc_and_de", {
                            "skeleton")
 
     file.copy(file.path(reportDir, "skeleton.Rmd"), "de.Rmd", overwrite = TRUE)
-    render("de.Rmd", params = list(design = formula(~group),
+    render("de.Rmd", params = list(bcbFile = "data/bcb.rda",
+                                   design = formula(~group),
                                    contrast = c("group", "ctrl", "ko"),
                                    outputDir = outputDir))
-    
+
     load("data/bcb.rda")
     print(bcb)
-    
+
     setwd("..")
 
 })
