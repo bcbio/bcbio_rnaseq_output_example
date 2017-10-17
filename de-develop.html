@@ -429,6 +429,18 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 <div id="differentially-expressed-genes-deg" class="section level2">
 <h2>Differentially expressed genes (DEG)</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>resTbl &lt;-<span class="st"> </span><span class="kw">resultsTables</span>(res, <span class="dt">lfc =</span> lfc, <span class="dt">dir =</span> deDir)</code></pre></div>
+<div id="summary-statistics" class="section level3">
+<h3>Summary statistics</h3>
+<ul>
+<li>47729 genes in count matrix</li>
+<li>base mean &gt; 0: 29451 genes (non-zero)</li>
+<li>base mean &gt; 1: 23567 genes</li>
+<li>alpha cutoff: 0.01</li>
+<li>lfc cutoff: 0 (applied in tables only)</li>
+<li>deg pass alpha: 151 genes</li>
+<li>deg lfc up: 58 genes</li>
+<li>deg lfc down: 93 genes</li>
+</ul>
 <p>DEG tables are sorted by BH-adjusted P value, and contain the following columns:</p>
 <ul>
 <li><code>ensgene</code>: <a href="http://useast.ensembl.org">Ensembl</a> gene identifier.</li>
@@ -442,6 +454,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 <li><code>description</code>: <a href="http://useast.ensembl.org">Ensembl</a> description.</li>
 <li><code>geneBiotype</code>: <a href="http://useast.ensembl.org">Ensembl</a> biotype (e.g. <code>protein_coding</code>).</li>
 </ul>
+</div>
 </div>
 </div>
 <div id="top-tables" class="section level1">
@@ -1794,7 +1807,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ## 
 ## $design
 ## ~group
-## &lt;environment: 0x1b427f58&gt;
+## &lt;environment: 0x1bb79150&gt;
 ## 
 ## $contrast
 ## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
