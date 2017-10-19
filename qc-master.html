@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2017-10-18" />
+<meta name="date" content="2017-10-19" />
 
 <title>Quality Control</title>
 
@@ -117,7 +117,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Quality Control</h1>
-<h4 class="date"><em>2017-10-18</em></h4>
+<h4 class="date"><em>2017-10-19</em></h4>
 
 </div>
 
@@ -255,7 +255,8 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 <p>When multiple factors may influence the results of a given experiment, it is useful to assess which of them is responsible for the most variance as determined by PCA. We adapted the method described by Daily et al. where they integrated a method to correlate covariates with principal components values to determine the importance of each factor.</p>
 <p>Here we are showing the correlational analysis of the rlog transformed count data’s principal components with the metadata covariates of interest. Significant correlations (FDR &lt; 0.1) are shaded from blue (anti-correlated) to orange (correlated), with non-significant correlations shaded in gray.</p>
 <pre class="r"><code>&gt; plotPCACovariates(bcb)</code></pre>
-<pre><code>## Error in strsplit(row[1], &quot; &quot;): non-character argument</code></pre>
+<pre><code>## Error: Aesthetics must be either length 1 or the same as the data (1): label, fill, x, y</code></pre>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAeACAMAAAAYfLr0AAAAA1BMVEX///+nxBvIAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAODElEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBmSsgAAZ9b+EIAAAAASUVORK5CYII=" width="960" /></p>
 </div>
 <div id="hierarchical-clustering" class="section level2">
 <h2>Hierarchical clustering</h2>
@@ -276,13 +277,13 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 <h2><code>devtools::session_info()</code></h2>
 <pre class="r"><code>&gt; devtools::session_info()</code></pre>
 <pre><code>##  setting  value                                             
-##  version  R Under development (unstable) (2017-10-18 r73557)
+##  version  R Under development (unstable) (2017-10-19 r73558)
 ##  system   x86_64, linux-gnu                                 
 ##  ui       X11                                               
 ##  language (EN)                                              
 ##  collate  en_US.UTF-8                                       
 ##  tz       UTC                                               
-##  date     2017-10-18                                        
+##  date     2017-10-19                                        
 ## 
 ##  package                * version  date      
 ##  acepack                  1.4.1    2016-10-29
@@ -294,15 +295,15 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  AnnotationHub            2.9.19   2017-10-03
 ##  assertthat               0.2.0    2017-04-11
 ##  backports                1.1.1    2017-09-25
-##  base                   * 3.5.0    2017-10-18
+##  base                   * 3.5.0    2017-10-19
 ##  base64enc                0.1-3    2015-07-28
 ##  basejump               * 0.0.25   2017-10-17
-##  bcbioRNASeq            * 0.0.27   2017-10-18
+##  bcbioRNASeq            * 0.0.27   2017-10-19
 ##  bindr                    0.1      2016-11-13
 ##  bindrcpp               * 0.2      2017-06-17
 ##  Biobase                * 2.37.2   2017-10-03
 ##  BiocGenerics           * 0.23.3   2017-10-09
-##  BiocInstaller            1.27.5   2017-10-18
+##  BiocInstaller            1.27.5   2017-10-19
 ##  BiocParallel             1.11.11  2017-10-17
 ##  biomaRt                  2.33.4   2017-10-03
 ##  Biostrings               2.45.4   2017-10-03
@@ -314,37 +315,31 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cellranger               1.1.0    2016-07-27
 ##  checkmate                1.8.4    2017-09-25
 ##  circlize                 0.4.1    2017-07-19
-##  class                    7.3-14   2015-08-30
 ##  cluster                  2.0.6    2017-03-10
 ##  codetools                0.2-15   2016-10-05
 ##  colorspace               1.3-2    2016-12-14
-##  compiler                 3.5.0    2017-10-18
-##  ComplexHeatmap           1.15.0   2017-02-15
+##  compiler                 3.5.0    2017-10-19
+##  ComplexHeatmap           1.15.1   2017-07-19
 ##  ConsensusClusterPlus     1.41.0   2017-10-11
 ##  cowplot                  0.8.0    2017-07-30
 ##  crayon                   1.3.4    2017-09-16
 ##  curl                     3.0      2017-10-06
 ##  data.table               1.10.4-2 2017-10-12
-##  datasets               * 3.5.0    2017-10-18
+##  datasets               * 3.5.0    2017-10-19
 ##  DBI                      0.7      2017-06-18
-##  DEGreport                1.13.12  2017-10-18
+##  DEGreport                1.13.12  2017-10-19
 ##  DelayedArray           * 0.3.21   2017-10-03
-##  dendextend               1.5.2    2017-03-28
-##  DEoptimR                 1.0-8    2016-11-19
 ##  DESeq2                 * 1.17.39  2017-10-18
 ##  devtools                 1.13.3   2017-08-02
 ##  digest                   0.6.12   2017-01-27
-##  diptest                  0.75-7   2016-12-05
 ##  dplyr                  * 0.7.4    2017-09-28
 ##  edgeR                    3.19.8   2017-10-17
 ##  ensembldb              * 2.1.14   2017-10-17
 ##  evaluate                 0.10.1   2017-06-24
-##  flexmix                  2.3-14   2017-04-28
 ##  forcats                  0.2.0    2017-01-23
 ##  foreign                  0.8-69   2017-06-22
 ##  formatR                  1.5      2017-04-25
 ##  Formula                  1.2-2    2017-07-10
-##  fpc                      2.1-10   2015-08-14
 ##  genefilter               1.59.0   2017-10-03
 ##  geneplotter              1.55.0   2017-10-03
 ##  GenomeInfoDb           * 1.13.5   2017-10-09
@@ -357,9 +352,9 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  ggrepel                  0.7.0    2017-09-29
 ##  GlobalOptions            0.0.12   2017-05-21
 ##  glue                     1.1.1    2017-06-21
-##  graphics               * 3.5.0    2017-10-18
-##  grDevices              * 3.5.0    2017-10-18
-##  grid                     3.5.0    2017-10-18
+##  graphics               * 3.5.0    2017-10-19
+##  grDevices              * 3.5.0    2017-10-19
+##  grid                     3.5.0    2017-10-19
 ##  gridExtra                2.3      2017-09-09
 ##  gtable                   0.2.0    2016-02-26
 ##  haven                    1.1.0    2017-07-09
@@ -373,7 +368,6 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  interactiveDisplayBase   1.15.0   2017-10-03
 ##  IRanges                * 2.11.19  2017-10-09
 ##  jsonlite                 1.5      2017-06-01
-##  kernlab                  0.9-25   2016-10-03
 ##  knitr                  * 1.17     2017-08-10
 ##  labeling                 0.3      2014-08-23
 ##  lattice                  0.20-35  2017-03-25
@@ -384,27 +378,22 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  logging                  0.7-103  2013-04-12
 ##  lubridate                1.6.0    2016-09-13
 ##  magrittr                 1.5      2014-11-22
-##  MASS                     7.3-47   2017-02-26
 ##  Matrix                   1.2-11   2017-08-21
 ##  MatrixModels             0.4-1    2015-08-22
 ##  matrixStats            * 0.52.2   2017-04-14
-##  mclust                   5.3      2017-05-21
 ##  memoise                  1.1.0    2017-04-21
-##  methods                * 3.5.0    2017-10-18
+##  methods                * 3.5.0    2017-10-19
 ##  mime                     0.5      2016-07-07
 ##  mnormt                   1.5-5    2016-10-15
 ##  modelr                   0.1.1    2017-07-24
-##  modeltools               0.2-21   2013-09-02
 ##  munsell                  0.4.3    2016-02-13
-##  mvtnorm                  1.0-6    2017-03-02
 ##  nlme                     3.1-131  2017-02-06
 ##  nnet                     7.3-12   2016-02-02
 ##  Nozzle.R1                1.1-1    2013-05-15
-##  parallel               * 3.5.0    2017-10-18
+##  parallel               * 3.5.0    2017-10-19
 ##  pheatmap                 1.0.8    2015-12-11
 ##  pkgconfig                2.0.1    2017-03-21
 ##  plyr                     1.8.4    2016-06-08
-##  prabclus                 2.2-6    2015-01-14
 ##  preprocessCore           1.39.3   2017-10-03
 ##  prettyunits              1.0.2    2015-07-13
 ##  progress                 1.1.2    2016-12-14
@@ -426,7 +415,6 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  rjson                    0.2.15   2014-11-03
 ##  rlang                    0.1.2    2017-08-09
 ##  rmarkdown              * 1.6      2017-06-15
-##  robustbase               0.92-7   2016-12-09
 ##  rpart                    4.1-11   2017-03-13
 ##  rprojroot                1.2      2017-01-16
 ##  Rsamtools                1.29.1   2017-10-03
@@ -439,9 +427,9 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  shape                    1.4.3    2017-08-16
 ##  shiny                    1.0.5    2017-08-23
 ##  SparseM                  1.77     2017-04-23
-##  splines                  3.5.0    2017-10-18
-##  stats                  * 3.5.0    2017-10-18
-##  stats4                 * 3.5.0    2017-10-18
+##  splines                  3.5.0    2017-10-19
+##  stats                  * 3.5.0    2017-10-19
+##  stats4                 * 3.5.0    2017-10-19
 ##  stringi                  1.1.5    2017-04-07
 ##  stringr                  1.2.0    2017-02-18
 ##  SummarizedExperiment   * 1.7.10   2017-10-03
@@ -450,14 +438,12 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  tibble                 * 1.3.4    2017-08-22
 ##  tidyr                  * 0.7.2    2017-10-16
 ##  tidyverse              * 1.1.1    2017-01-27
-##  tools                    3.5.0    2017-10-18
-##  trimcluster              0.1-2    2012-10-29
+##  tools                    3.5.0    2017-10-19
 ##  tximport                 1.5.1    2017-10-09
-##  utils                  * 3.5.0    2017-10-18
+##  utils                  * 3.5.0    2017-10-19
 ##  viridis                  0.4.0    2017-03-27
 ##  viridisLite              0.2.0    2017-03-24
 ##  vsn                      3.45.2   2017-10-03
-##  whisker                  0.3-2    2013-04-28
 ##  withr                    2.0.0    2017-07-28
 ##  XML                      3.98-1.9 2017-06-19
 ##  xml2                     1.1.9000 2017-10-03
@@ -497,10 +483,9 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@0.4.1)                       
 ##  CRAN (R 3.5.0)                      
 ##  CRAN (R 3.5.0)                      
-##  CRAN (R 3.5.0)                      
 ##  cran (@1.3-2)                       
 ##  local                               
-##  cran (@1.15.0)                      
+##  cran (@1.15.1)                      
 ##  cran (@1.41.0)                      
 ##  cran (@0.8.0)                       
 ##  cran (@1.3.4)                       
@@ -508,24 +493,19 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@1.10.4-)                     
 ##  local                               
 ##  cran (@0.7)                         
-##  Github (lpantano/DEGreport@8e298c9) 
+##  Github (lpantano/DEGreport@f24a843) 
 ##  cran (@0.3.21)                      
-##  cran (@1.5.2)                       
-##  cran (@1.0-8)                       
 ##  cran (@1.17.39)                     
 ##  CRAN (R 3.5.0)                      
 ##  CRAN (R 3.5.0)                      
-##  cran (@0.75-7)                      
 ##  cran (@0.7.4)                       
 ##  cran (@3.19.8)                      
 ##  cran (@2.1.14)                      
 ##  cran (@0.10.1)                      
-##  cran (@2.3-14)                      
 ##  cran (@0.2.0)                       
 ##  CRAN (R 3.5.0)                      
 ##  CRAN (R 3.5.0)                      
 ##  cran (@1.2-2)                       
-##  cran (@2.1-10)                      
 ##  cran (@1.59.0)                      
 ##  cran (@1.55.0)                      
 ##  cran (@1.13.5)                      
@@ -554,7 +534,6 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@1.15.0)                      
 ##  cran (@2.11.19)                     
 ##  CRAN (R 3.5.0)                      
-##  cran (@0.9-25)                      
 ##  cran (@1.17)                        
 ##  cran (@0.3)                         
 ##  CRAN (R 3.5.0)                      
@@ -566,18 +545,14 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@1.6.0)                       
 ##  cran (@1.5)                         
 ##  CRAN (R 3.5.0)                      
-##  CRAN (R 3.5.0)                      
 ##  cran (@0.4-1)                       
 ##  cran (@0.52.2)                      
-##  cran (@5.3)                         
 ##  CRAN (R 3.5.0)                      
 ##  local                               
 ##  CRAN (R 3.5.0)                      
 ##  cran (@1.5-5)                       
 ##  cran (@0.1.1)                       
-##  cran (@0.2-21)                      
 ##  cran (@0.4.3)                       
-##  cran (@1.0-6)                       
 ##  CRAN (R 3.5.0)                      
 ##  CRAN (R 3.5.0)                      
 ##  cran (@1.1-1)                       
@@ -585,7 +560,6 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@1.0.8)                       
 ##  cran (@2.0.1)                       
 ##  cran (@1.8.4)                       
-##  cran (@2.2-6)                       
 ##  cran (@1.39.3)                      
 ##  cran (@1.0.2)                       
 ##  cran (@1.1.2)                       
@@ -607,7 +581,6 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@0.2.15)                      
 ##  cran (@0.1.2)                       
 ##  cran (@1.6)                         
-##  cran (@0.92-7)                      
 ##  CRAN (R 3.5.0)                      
 ##  cran (@1.2)                         
 ##  cran (@1.29.1)                      
@@ -632,13 +605,11 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ##  cran (@0.7.2)                       
 ##  cran (@1.1.1)                       
 ##  local                               
-##  cran (@0.1-2)                       
 ##  cran (@1.5.1)                       
 ##  local                               
 ##  cran (@0.4.0)                       
 ##  cran (@0.2.0)                       
 ##  cran (@3.45.2)                      
-##  CRAN (R 3.5.0)                      
 ##  CRAN (R 3.5.0)                      
 ##  cran (@3.98-1.)                     
 ##  Github (hadley/xml2@5799cd9)        
@@ -651,7 +622,7 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 <div id="utilssessioninfo" class="section level2">
 <h2><code>utils::sessionInfo()</code></h2>
 <pre class="r"><code>&gt; sessionInfo()</code></pre>
-<pre><code>## R Under development (unstable) (2017-10-18 r73557)
+<pre><code>## R Under development (unstable) (2017-10-19 r73558)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
 ## 
@@ -688,78 +659,71 @@ countsDir &lt;- file.path(outputDir, &quot;results&quot;, &quot;counts&quot;)</c
 ## [27] testthat_1.0.2             
 ## 
 ## loaded via a namespace (and not attached):
-##   [1] R.utils_2.5.0                 RSQLite_2.0                  
-##   [3] htmlwidgets_0.9               grid_3.5.0                   
-##   [5] trimcluster_0.1-2             BiocParallel_1.11.11         
-##   [7] devtools_1.13.3               munsell_0.4.3                
-##   [9] codetools_0.2-15              preprocessCore_1.39.3        
-##  [11] withr_2.0.0                   colorspace_1.3-2             
-##  [13] BiocInstaller_1.27.5          rstudioapi_0.7               
-##  [15] robustbase_0.92-7             labeling_0.3                 
-##  [17] tximport_1.5.1                GenomeInfoDbData_0.99.1      
-##  [19] mnormt_1.5-5                  bit64_0.9-7                  
-##  [21] pheatmap_1.0.8                rprojroot_1.2                
-##  [23] diptest_0.75-7                R6_2.2.2                     
-##  [25] locfit_1.5-9.1                flexmix_2.3-14               
-##  [27] bitops_1.0-6                  reshape_0.8.7                
-##  [29] assertthat_0.2.0              scales_0.5.0                 
-##  [31] nnet_7.3-12                   gtable_0.2.0                 
-##  [33] affy_1.55.0                   rlang_0.1.2                  
-##  [35] MatrixModels_0.4-1            genefilter_1.59.0            
-##  [37] GlobalOptions_0.0.12          splines_3.5.0                
-##  [39] rtracklayer_1.37.3            lazyeval_0.2.0               
-##  [41] acepack_1.4.1                 broom_0.4.2                  
-##  [43] checkmate_1.8.4               yaml_2.1.14                  
-##  [45] reshape2_1.4.2                modelr_0.1.1                 
-##  [47] backports_1.1.1               httpuv_1.3.5                 
-##  [49] Hmisc_4.0-3                   tools_3.5.0                  
-##  [51] psych_1.7.8                   logging_0.7-103              
-##  [53] affyio_1.47.1                 RColorBrewer_1.1-2           
-##  [55] Rcpp_0.12.13                  plyr_1.8.4                   
-##  [57] base64enc_0.1-3               progress_1.1.2               
-##  [59] zlibbioc_1.23.0               RCurl_1.95-4.8               
-##  [61] prettyunits_1.0.2             rpart_4.1-11                 
-##  [63] GetoptLong_0.1.6              viridis_0.4.0                
-##  [65] cowplot_0.8.0                 haven_1.1.0                  
-##  [67] ggrepel_0.7.0                 cluster_2.0.6                
-##  [69] magrittr_1.5                  data.table_1.10.4-2          
-##  [71] SparseM_1.77                  circlize_0.4.1               
-##  [73] mvtnorm_1.0-6                 whisker_0.3-2                
-##  [75] ProtGenerics_1.9.1            hms_0.3                      
-##  [77] mime_0.5                      evaluate_0.10.1              
-##  [79] xtable_1.8-2                  XML_3.98-1.9                 
-##  [81] mclust_5.3                    readxl_1.0.0                 
-##  [83] gridExtra_2.3                 shape_1.4.3                  
-##  [85] compiler_3.5.0                biomaRt_2.33.4               
-##  [87] crayon_1.3.4                  R.oo_1.21.0                  
-##  [89] htmltools_0.3.6               Formula_1.2-2                
-##  [91] geneplotter_1.55.0            lubridate_1.6.0              
-##  [93] DBI_0.7                       formatR_1.5                  
-##  [95] ComplexHeatmap_1.15.0         MASS_7.3-47                  
-##  [97] fpc_2.1-10                    Matrix_1.2-11                
-##  [99] vsn_3.45.2                    R.methodsS3_1.7.1            
-## [101] bindr_0.1                     forcats_0.2.0                
-## [103] pkgconfig_2.0.1               GenomicAlignments_1.13.6     
-## [105] foreign_0.8-69                xml2_1.1.9000                
-## [107] annotate_1.55.0               XVector_0.17.1               
-## [109] rvest_0.3.2                   stringr_1.2.0                
-## [111] digest_0.6.12                 ConsensusClusterPlus_1.41.0  
-## [113] Biostrings_2.45.4             cellranger_1.1.0             
-## [115] htmlTable_1.9                 dendextend_1.5.2             
-## [117] edgeR_3.19.8                  curl_3.0                     
-## [119] kernlab_0.9-25                shiny_1.0.5                  
-## [121] Rsamtools_1.29.1              quantreg_5.33                
-## [123] modeltools_0.2-21             rjson_0.2.15                 
-## [125] nlme_3.1-131                  jsonlite_1.5                 
-## [127] DEGreport_1.13.12             viridisLite_0.2.0            
-## [129] limma_3.33.14                 lattice_0.20-35              
-## [131] Nozzle.R1_1.1-1               httr_1.3.1                   
-## [133] DEoptimR_1.0-8                survival_2.41-3              
-## [135] interactiveDisplayBase_1.15.0 glue_1.1.1                   
-## [137] prabclus_2.2-6                bit_1.1-12                   
-## [139] class_7.3-14                  stringi_1.1.5                
-## [141] blob_1.1.0                    AnnotationHub_2.9.19         
-## [143] latticeExtra_0.6-28           memoise_1.1.0</code></pre>
+##   [1] readxl_1.0.0                  backports_1.1.1              
+##   [3] circlize_0.4.1                Hmisc_4.0-3                  
+##   [5] AnnotationHub_2.9.19          plyr_1.8.4                   
+##   [7] ConsensusClusterPlus_1.41.0   lazyeval_0.2.0               
+##   [9] splines_3.5.0                 BiocParallel_1.11.11         
+##  [11] digest_0.6.12                 BiocInstaller_1.27.5         
+##  [13] htmltools_0.3.6               viridis_0.4.0                
+##  [15] magrittr_1.5                  checkmate_1.8.4              
+##  [17] memoise_1.1.0                 cluster_2.0.6                
+##  [19] limma_3.33.14                 ComplexHeatmap_1.15.1        
+##  [21] Biostrings_2.45.4             annotate_1.55.0              
+##  [23] Nozzle.R1_1.1-1               modelr_0.1.1                 
+##  [25] R.utils_2.5.0                 prettyunits_1.0.2            
+##  [27] colorspace_1.3-2              rvest_0.3.2                  
+##  [29] blob_1.1.0                    ggrepel_0.7.0                
+##  [31] haven_1.1.0                   jsonlite_1.5                 
+##  [33] tximport_1.5.1                crayon_1.3.4                 
+##  [35] RCurl_1.95-4.8                DEGreport_1.13.12            
+##  [37] genefilter_1.59.0             bindr_0.1                    
+##  [39] survival_2.41-3               glue_1.1.1                   
+##  [41] gtable_0.2.0                  zlibbioc_1.23.0              
+##  [43] XVector_0.17.1                MatrixModels_0.4-1           
+##  [45] GetoptLong_0.1.6              shape_1.4.3                  
+##  [47] SparseM_1.77                  scales_0.5.0                 
+##  [49] vsn_3.45.2                    pheatmap_1.0.8               
+##  [51] DBI_0.7                       edgeR_3.19.8                 
+##  [53] Rcpp_0.12.13                  viridisLite_0.2.0            
+##  [55] xtable_1.8-2                  progress_1.1.2               
+##  [57] htmlTable_1.9                 foreign_0.8-69               
+##  [59] bit_1.1-12                    preprocessCore_1.39.3        
+##  [61] Formula_1.2-2                 htmlwidgets_0.9              
+##  [63] httr_1.3.1                    RColorBrewer_1.1-2           
+##  [65] acepack_1.4.1                 pkgconfig_2.0.1              
+##  [67] reshape_0.8.7                 XML_3.98-1.9                 
+##  [69] R.methodsS3_1.7.1             nnet_7.3-12                  
+##  [71] locfit_1.5-9.1                labeling_0.3                 
+##  [73] reshape2_1.4.2                rlang_0.1.2                  
+##  [75] munsell_0.4.3                 cellranger_1.1.0             
+##  [77] tools_3.5.0                   RSQLite_2.0                  
+##  [79] broom_0.4.2                   devtools_1.13.3              
+##  [81] evaluate_0.10.1               stringr_1.2.0                
+##  [83] yaml_2.1.14                   bit64_0.9-7                  
+##  [85] nlme_3.1-131                  mime_0.5                     
+##  [87] quantreg_5.33                 formatR_1.5                  
+##  [89] R.oo_1.21.0                   xml2_1.1.9000                
+##  [91] biomaRt_2.33.4                rstudioapi_0.7               
+##  [93] compiler_3.5.0                curl_3.0                     
+##  [95] interactiveDisplayBase_1.15.0 affyio_1.47.1                
+##  [97] geneplotter_1.55.0            stringi_1.1.5                
+##  [99] forcats_0.2.0                 lattice_0.20-35              
+## [101] ProtGenerics_1.9.1            Matrix_1.2-11                
+## [103] psych_1.7.8                   GlobalOptions_0.0.12         
+## [105] data.table_1.10.4-2           cowplot_0.8.0                
+## [107] bitops_1.0-6                  httpuv_1.3.5                 
+## [109] rtracklayer_1.37.3            affy_1.55.0                  
+## [111] R6_2.2.2                      latticeExtra_0.6-28          
+## [113] gridExtra_2.3                 codetools_0.2-15             
+## [115] assertthat_0.2.0              rprojroot_1.2                
+## [117] rjson_0.2.15                  withr_2.0.0                  
+## [119] GenomicAlignments_1.13.6      Rsamtools_1.29.1             
+## [121] mnormt_1.5-5                  GenomeInfoDbData_0.99.1      
+## [123] hms_0.3                       grid_3.5.0                   
+## [125] rpart_4.1-11                  logging_0.7-103              
+## [127] lubridate_1.6.0               shiny_1.0.5                  
+## [129] base64enc_0.1-3</code></pre>
 <pre class="r"><code>&gt; mdHeader(&quot;YAML params&quot;, level = 2)</code></pre>
 </div>
 <div id="yaml-params" class="section level2">
