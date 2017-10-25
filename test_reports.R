@@ -2,32 +2,32 @@ context("Reports")
 library(rmarkdown)
 library(bcbioRNASeq)
 
-test_that("qc_and_de", {
-    unlink("report", recursive = TRUE)
+unlink("report", recursive = TRUE)
 
-    uploadDir <- tools::file_path_as_absolute(file.path("."))
-    print(uploadDir)
-    library(bcbioRNASeq)
-    bcb <- loadRNASeqRun(
-        uploadDir,
-        interestingGroups = c("group")
-    )
+uploadDir <- tools::file_path_as_absolute(file.path("."))
+print(uploadDir)
+library(bcbioRNASeq)
+bcb <- loadRNASeqRun(
+    uploadDir,
+    interestingGroups = c("group")
+)
 
-    dir.create("report")
-    setwd("report")
+dir.create("report")
+setwd("report")
 
-    saveData(bcb, dir = "data")
+saveData(bcb, dir = "data")
 
-    outputDir <- tools::file_path_as_absolute(file.path("."))
+outputDir <- tools::file_path_as_absolute(file.path("."))
 
-    extraDir <- system.file("extra", package = "bcbioRNASeq")
-    miscDir <- file.path("..",  "..", "bcbioRNASeq",
-                         "inst", "rmarkdown", "shared")
+extraDir <- system.file("extra", package = "bcbioRNASeq")
+miscDir <- file.path("..",  "..", "bcbioRNASeq",
+                     "inst", "rmarkdown", "shared")
 
-    print(list.files(miscDir, full.names = TRUE))
-    file.copy(list.files(miscDir, full.names = TRUE), ".",
-              overwrite = TRUE, recursive = TRUE)
+print(list.files(miscDir, full.names = TRUE))
+file.copy(list.files(miscDir, full.names = TRUE), ".",
+          overwrite = TRUE, recursive = TRUE)
 
+test_that("qc", {
     reportDir <- file.path("..", "..", "bcbioRNASeq",
                            "inst", "rmarkdown",
                            "templates", "quality_control",
@@ -35,7 +35,9 @@ test_that("qc_and_de", {
     file.copy(file.path(reportDir, "skeleton.Rmd"), "qc.Rmd", overwrite = TRUE)
     render("qc.Rmd", params = list(bcbFile = "data/bcb.rda",
                                    outputDir = outputDir))
+})
 
+test_that("de", {
     reportDir <- file.path("..",  "..", "bcbioRNASeq",
                            "inst", "rmarkdown",
                            "templates", "differential_expression",
@@ -45,18 +47,21 @@ test_that("qc_and_de", {
                                    design = formula(~group),
                                    contrast = c("group", "ctrl", "ko"),
                                    outputDir = outputDir))
-
-    reportDir <- file.path("..",  "..", "bcbioRNASeq",
-                           "inst", "rmarkdown",
-                           "templates", "functional_analysis",
-                           "skeleton")
-    file.copy(file.path(reportDir, "skeleton.Rmd"), "fa.Rmd", overwrite = TRUE)
-    render("fa.Rmd", params = list(bcbFile = "data/bcb.rda",
-                                   outputDir = outputDir))
-
-    load("data/bcb.rda")
-    print(bcb)
-
-    setwd("..")
-
 })
+
+# test_that("fa", {
+#     reportDir <- file.path("..",  "..", "bcbioRNASeq",
+#                            "inst", "rmarkdown",
+#                            "templates", "functional_analysis",
+#                            "skeleton")
+#     file.copy(file.path(reportDir, "skeleton.Rmd"), "fa.Rmd", overwrite = TRUE)
+#     render("fa.Rmd", params = list(bcbFile = "data/bcb.rda",
+#                                    outputDir = outputDir))
+#
+# })
+
+
+load("data/bcb.rda")
+print(bcb)
+
+setwd("..")
