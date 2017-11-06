@@ -297,7 +297,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 <hr />
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="co"># help('design', 'DESeq2')</span>
 <span class="er">&gt;</span><span class="st"> </span>dds &lt;-<span class="st"> </span><span class="kw">DESeqDataSetFromTximport</span>(<span class="dt">txi =</span> <span class="kw">txi</span>(bcb), <span class="dt">colData =</span> <span class="kw">colData</span>(bcb), <span class="dt">design =</span> params$design) %&gt;%<span class="st"> </span>
-+<span class="st">     </span><span class="kw">DESeq</span>()
++<span class="st">     </span>DESeq
 &gt;<span class="st"> </span>rld &lt;-<span class="st"> </span><span class="kw">rlog</span>(dds)</code></pre></div>
 </div>
 <div id="alpha-level-fdr-cutoffs" class="section level1">
@@ -420,8 +420,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 </div>
 <div id="differentially-expressed-genes-deg" class="section level2">
 <h2>Differentially expressed genes (DEG)</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>resTbl &lt;-<span class="st"> </span><span class="kw">resultsTables</span>(res, <span class="dt">lfc =</span> params$lfc, <span class="dt">write =</span> <span class="ot">TRUE</span>, <span class="dt">summary =</span> <span class="ot">TRUE</span>, 
-+<span class="st">     </span><span class="dt">headerLevel =</span> <span class="dv">3</span>, <span class="dt">dir =</span> deDir)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>resTbl &lt;-<span class="st"> </span><span class="kw">resultsTables</span>(res, <span class="dt">lfc =</span> params$lfc, <span class="dt">dir =</span> deDir)</code></pre></div>
 <div id="summary-statistics" class="section level3">
 <h3>Summary statistics</h3>
 <ul>
@@ -1297,7 +1296,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 <h2><code>devtools::session_info()</code></h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>devtools::<span class="kw">session_info</span>()</code></pre></div>
 <pre><code>##  setting  value                                             
-##  version  R Under development (unstable) (2017-11-06 r73673)
+##  version  R Under development (unstable) (2017-11-06 r73676)
 ##  system   x86_64, linux-gnu                                 
 ##  ui       X11                                               
 ##  language (EN)                                              
@@ -1318,7 +1317,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ##  base                   * 3.5.0    2017-11-06
 ##  base64enc                0.1-3    2015-07-28
 ##  basejump               * 0.1.1    2017-11-06
-##  bcbioRNASeq            * 0.1.2    2017-11-06
+##  bcbioRNASeq            * 0.1.1    2017-11-06
 ##  bindr                    0.1      2016-11-13
 ##  bindrcpp               * 0.2      2017-06-17
 ##  Biobase                * 2.39.0   2017-11-06
@@ -1468,7 +1467,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ##  vsn                      3.47.0   2017-11-06
 ##  withr                    2.1.0    2017-11-01
 ##  XML                      3.98-1.9 2017-06-19
-##  xml2                     1.1.1    2017-01-24
+##  xml2                     1.1.9000 2017-11-06
 ##  xtable                   1.8-2    2016-02-05
 ##  XVector                  0.19.0   2017-11-06
 ##  yaml                     2.1.14   2016-11-12
@@ -1636,7 +1635,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ##  cran (@3.47.0)                      
 ##  CRAN (R 3.5.0)                      
 ##  cran (@3.98-1.)                     
-##  cran (@1.1.1)                       
+##  Github (hadley/xml2@5799cd9)        
 ##  cran (@1.8-2)                       
 ##  cran (@0.19.0)                      
 ##  cran (@2.1.14)                      
@@ -1646,7 +1645,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 <div id="utilssessioninfo" class="section level2">
 <h2><code>utils::sessionInfo()</code></h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">sessionInfo</span>()</code></pre></div>
-<pre><code>## R Under development (unstable) (2017-11-06 r73673)
+<pre><code>## R Under development (unstable) (2017-11-06 r73676)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
 ## 
@@ -1673,7 +1672,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ##  [7] tidyverse_1.1.1            knitr_1.17                
 ##  [9] ensembldb_2.3.0            AnnotationFilter_1.3.0    
 ## [11] GenomicFeatures_1.31.0     AnnotationDbi_1.41.2      
-## [13] bindrcpp_0.2               bcbioRNASeq_0.1.2         
+## [13] bindrcpp_0.2               bcbioRNASeq_0.1.1         
 ## [15] basejump_0.1.1             DESeq2_1.19.1             
 ## [17] SummarizedExperiment_1.9.1 DelayedArray_0.5.1        
 ## [19] matrixStats_0.52.2         Biobase_2.39.0            
@@ -1727,7 +1726,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ##  [83] yaml_2.1.14                   bit64_0.9-7                  
 ##  [85] nlme_3.1-131                  mime_0.5                     
 ##  [87] quantreg_5.34                 formatR_1.5                  
-##  [89] R.oo_1.21.0                   xml2_1.1.1                   
+##  [89] R.oo_1.21.0                   xml2_1.1.9000                
 ##  [91] biomaRt_2.35.0                rstudioapi_0.7               
 ##  [93] compiler_3.5.0                curl_3.0                     
 ##  [95] interactiveDisplayBase_1.17.0 affyio_1.49.0                
@@ -1765,7 +1764,7 @@ deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(outputDir,
 ## 
 ## $design
 ## ~group
-## &lt;environment: 0x17586c50&gt;
+## &lt;environment: 0x2f7ce798&gt;
 ## 
 ## $contrast
 ## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
