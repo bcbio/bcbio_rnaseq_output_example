@@ -457,7 +457,30 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 </div>
 <div id="r-session-information" class="section level1 tabset">
 <h1>R session information</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">mdHeader</span>(<span class="st">&quot;YAML params&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</code></pre></div>
+<div id="yaml-params" class="section level2">
+<h2>YAML params</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">print</span>(params)</code></pre></div>
+<pre><code>## $alpha
+## [1] 0.01
+## 
+## $lfc
+## [1] 1
+## 
+## $bcbFile
+## [1] &quot;data/bcb.rda&quot;
+## 
+## $design
+## ~group
+## &lt;environment: 0x2db21ec0&gt;
+## 
+## $contrast
+## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
+## 
+## $outputDir
+## [1] &quot;/home/travis/build/hbc/bcbio_rnaseq_output_example/report&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">mdHeader</span>(<span class="st">&quot;`devtools::session_info()`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</code></pre></div>
+</div>
 <div id="devtoolssession_info" class="section level2">
 <h2><code>devtools::session_info()</code></h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>devtools::<span class="kw">session_info</span>()</code></pre></div>
@@ -482,7 +505,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  backports                1.1.1    2017-09-25
 ##  base                   * 3.4.2    2017-10-12
 ##  base64enc                0.1-3    2015-07-28
-##  basejump               * 0.1.9    2017-12-19
+##  basejump               * 0.1.10   2017-12-19
 ##  bcbioRNASeq            * 0.1.4    2017-12-19
 ##  bindr                    0.1      2016-11-13
 ##  bindrcpp               * 0.2      2017-06-17
@@ -509,7 +532,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  ConsensusClusterPlus     1.42.0   2017-11-30
 ##  cowplot                  0.9.2    2017-12-17
 ##  crayon                   1.3.4    2017-09-16
-##  curl                     3.0      2017-10-06
+##  curl                     3.1      2017-12-12
 ##  data.table               1.10.4-3 2017-10-27
 ##  datasets               * 3.4.2    2017-10-12
 ##  DBI                      0.7      2017-06-18
@@ -521,7 +544,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  digest                   0.6.12   2017-01-27
 ##  dplyr                  * 0.7.4    2017-09-28
 ##  edgeR                    3.20.2   2017-12-18
-##  ensembldb                2.3.5    2017-12-08
+##  ensembldb                2.3.6    2017-12-19
 ##  evaluate                 0.10.1   2017-06-24
 ##  forcats                * 0.2.0    2017-01-23
 ##  foreign                  0.8-69   2017-06-22
@@ -613,7 +636,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  Rsamtools                1.30.0   2017-11-30
 ##  RSQLite                  2.0      2017-06-19
 ##  rstudioapi               0.7      2017-09-07
-##  rtracklayer              1.38.1   2017-12-05
+##  rtracklayer              1.38.2   2017-12-19
 ##  rvest                    0.3.2    2016-06-17
 ##  S4Vectors              * 0.16.0   2017-11-30
 ##  scales                   0.5.0    2017-08-24
@@ -625,7 +648,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  stats4                 * 3.4.2    2017-10-12
 ##  stringi                  1.1.6    2017-11-17
 ##  stringr                * 1.2.0    2017-02-18
-##  SummarizedExperiment   * 1.8.0    2017-11-30
+##  SummarizedExperiment   * 1.8.1    2017-12-19
 ##  survival                 2.41-3   2017-04-04
 ##  testthat               * 2.0.0    2017-12-13
 ##  tibble                 * 1.3.4    2017-08-22
@@ -656,7 +679,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  cran (@1.1.1)                       
 ##  local                               
 ##  cran (@0.1-3)                       
-##  Github (steinbaugh/basejump@daee2cc)
+##  Github (steinbaugh/basejump@cc41eb4)
 ##  local (hbc/bcbioRNASeq@NA)          
 ##  cran (@0.1)                         
 ##  cran (@0.2)                         
@@ -683,7 +706,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  cran (@1.42.0)                      
 ##  cran (@0.9.2)                       
 ##  CRAN (R 3.4.2)                      
-##  CRAN (R 3.4.2)                      
+##  cran (@3.1)                         
 ##  cran (@1.10.4-)                     
 ##  local                               
 ##  cran (@0.7)                         
@@ -695,7 +718,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  CRAN (R 3.4.2)                      
 ##  cran (@0.7.4)                       
 ##  cran (@3.20.2)                      
-##  Github (jotsetung/ensembldb@92268c9)
+##  Github (jotsetung/ensembldb@700395e)
 ##  cran (@0.10.1)                      
 ##  cran (@0.2.0)                       
 ##  CRAN (R 3.4.2)                      
@@ -787,7 +810,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  cran (@1.30.0)                      
 ##  cran (@2.0)                         
 ##  CRAN (R 3.4.2)                      
-##  cran (@1.38.1)                      
+##  cran (@1.38.2)                      
 ##  cran (@0.3.2)                       
 ##  cran (@0.16.0)                      
 ##  cran (@0.5.0)                       
@@ -799,7 +822,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  local                               
 ##  cran (@1.1.6)                       
 ##  cran (@1.2.0)                       
-##  cran (@1.8.0)                       
+##  cran (@1.8.1)                       
 ##  CRAN (R 3.4.2)                      
 ##  cran (@2.0.0)                       
 ##  cran (@1.3.4)                       
@@ -822,7 +845,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 </div>
 <div id="utilssessioninfo" class="section level2">
 <h2><code>utils::sessionInfo()</code></h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">sessionInfo</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>utils::<span class="kw">sessionInfo</span>()</code></pre></div>
 <pre><code>## R version 3.4.2 (2017-01-27)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
@@ -852,8 +875,8 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ## [11] knitr_1.17                 AnnotationFilter_1.2.0    
 ## [13] GenomicFeatures_1.30.0     AnnotationDbi_1.40.0      
 ## [15] bindrcpp_0.2               bcbioRNASeq_0.1.4         
-## [17] basejump_0.1.9             DESeq2_1.18.1             
-## [19] SummarizedExperiment_1.8.0 DelayedArray_0.4.1        
+## [17] basejump_0.1.10            DESeq2_1.18.1             
+## [19] SummarizedExperiment_1.8.1 DelayedArray_0.4.1        
 ## [21] matrixStats_0.52.2         Biobase_2.38.0            
 ## [23] GenomicRanges_1.30.0       GenomeInfoDb_1.14.0       
 ## [25] IRanges_2.12.0             S4Vectors_0.16.0          
@@ -876,10 +899,10 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  [25] bitops_1.0-6                  reshape_0.8.7                
 ##  [27] assertthat_0.2.0              scales_0.5.0                 
 ##  [29] nnet_7.3-12                   gtable_0.2.0                 
-##  [31] affy_1.56.0                   ensembldb_2.3.5              
+##  [31] affy_1.56.0                   ensembldb_2.3.6              
 ##  [33] rlang_0.1.4                   MatrixModels_0.4-1           
 ##  [35] genefilter_1.60.0             GlobalOptions_0.0.12         
-##  [37] splines_3.4.2                 rtracklayer_1.38.1           
+##  [37] splines_3.4.2                 rtracklayer_1.38.2           
 ##  [39] lazyeval_0.2.1                acepack_1.4.1                
 ##  [41] broom_0.4.3                   checkmate_1.8.5              
 ##  [43] yaml_2.1.16                   reshape2_1.4.3               
@@ -917,7 +940,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ## [107] rvest_0.3.2                   digest_0.6.12                
 ## [109] ConsensusClusterPlus_1.42.0   Biostrings_2.46.0            
 ## [111] cellranger_1.1.0              htmlTable_1.9                
-## [113] edgeR_3.20.2                  curl_3.0                     
+## [113] edgeR_3.20.2                  curl_3.1                     
 ## [115] shiny_1.0.5                   Rsamtools_1.30.0             
 ## [117] quantreg_5.34                 rjson_0.2.15                 
 ## [119] nlme_3.1-131                  jsonlite_1.5                 
@@ -929,29 +952,6 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ## [131] stringi_1.1.6                 blob_1.1.0                   
 ## [133] AnnotationHub_2.10.1          latticeExtra_0.6-28          
 ## [135] memoise_1.1.0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">mdHeader</span>(<span class="st">&quot;YAML params&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</code></pre></div>
-</div>
-<div id="yaml-params" class="section level2">
-<h2>YAML params</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">print</span>(params)</code></pre></div>
-<pre><code>## $alpha
-## [1] 0.01
-## 
-## $lfc
-## [1] 1
-## 
-## $bcbFile
-## [1] &quot;data/bcb.rda&quot;
-## 
-## $design
-## ~group
-## &lt;environment: 0x3511c390&gt;
-## 
-## $contrast
-## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
-## 
-## $outputDir
-## [1] &quot;/home/travis/build/hbc/bcbio_rnaseq_output_example/report&quot;</code></pre>
 <div id="refs" class="references">
 <div id="ref-Benjamini:1995ws">
 <p>Benjamini, Yoav, and Yosef Hochberg. 1995. “Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.” <em>J. R. Stat. Soc. Series B Stat. Methodol.</em> 57 (1). [Royal Statistical Society, Wiley]: 289–300. <a href="http://www.jstor.org/stable/2346101" class="uri">http://www.jstor.org/stable/2346101</a>.</p>
