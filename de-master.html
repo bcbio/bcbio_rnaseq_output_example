@@ -428,7 +428,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 <h2>Differentially expressed genes (DEG)</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>resTbl &lt;-<span class="st"> </span><span class="kw">resultsTables</span>(res, <span class="dt">lfc =</span> params$lfc, <span class="dt">write =</span> <span class="ot">TRUE</span>, <span class="dt">summary =</span> <span class="ot">TRUE</span>, 
 +<span class="st">     </span><span class="dt">headerLevel =</span> <span class="dv">3</span>, <span class="dt">dir =</span> deDir)</code></pre></div>
-<pre><code>## Error in .local(object, ...): unused argument (headerLevel = 3)</code></pre>
+<p>Summary statistics: - 47729 genes in counts matrix - Base mean &gt; 0: 29451 genes (non-zero) - Base mean &gt; 1: 23567 genes - Alpha cutoff: 0.01 - LFC cutoff: 1 (applied in tables only) - DEG pass alpha: 151 genes - DEG LFC up: 22 genes - DEG LFC down: 28 genes</p>
 <p>DEG tables are sorted by BH-adjusted P value, and contain the following columns:</p>
 <ul>
 <li><code>ensgene</code>: <a href="http://useast.ensembl.org">Ensembl</a> gene identifier.</li>
@@ -448,7 +448,436 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 <h1>Top tables</h1>
 <p>Only the top up- and down-regulated genes (arranged by log2 fold change) are shown.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">topTables</span>(resTbl)</code></pre></div>
-<pre><code>## Error in topTables(resTbl): object 'resTbl' not found</code></pre>
+<table>
+<caption>group ctrl vs ko (upregulated)</caption>
+<thead>
+<tr class="header">
+<th align="left">ensgene</th>
+<th align="right">baseMean</th>
+<th align="left">lfc</th>
+<th align="left">padj</th>
+<th align="left">symbol</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ENSMUSG00000052974</td>
+<td align="right">4250</td>
+<td align="left">2.61</td>
+<td align="left">2.38e-48</td>
+<td align="left">Cyp2f2</td>
+<td align="left">cytochrome P450, family 2, subfamily f, polypeptide 2</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000059824</td>
+<td align="right">1509</td>
+<td align="left">2.28</td>
+<td align="left">9.62e-46</td>
+<td align="left">Dbp</td>
+<td align="left">D site albumin promoter binding protein</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000066258</td>
+<td align="right">298</td>
+<td align="left">3.06</td>
+<td align="left">2.06e-40</td>
+<td align="left">Trim12a</td>
+<td align="left">tripartite motif-containing 12A</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000028358</td>
+<td align="right">500</td>
+<td align="left">2.51</td>
+<td align="left">1.29e-38</td>
+<td align="left">Zfp618</td>
+<td align="left">zinc finger protein 618</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000057596</td>
+<td align="right">274</td>
+<td align="left">3.19</td>
+<td align="left">1.29e-38</td>
+<td align="left">Trim30d</td>
+<td align="left">tripartite motif-containing 30D</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000021775</td>
+<td align="right">1518</td>
+<td align="left">2.21</td>
+<td align="left">2.31e-36</td>
+<td align="left">Nr1d2</td>
+<td align="left">nuclear receptor subfamily 1, group D, member 2</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000020889</td>
+<td align="right">1385</td>
+<td align="left">2.26</td>
+<td align="left">1.56e-25</td>
+<td align="left">Nr1d1</td>
+<td align="left">nuclear receptor subfamily 1, group D, member 1</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000032281</td>
+<td align="right">2568</td>
+<td align="left">1.62</td>
+<td align="left">4.72e-12</td>
+<td align="left">Acsbg1</td>
+<td align="left">acyl-CoA synthetase bubblegum family member 1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000049892</td>
+<td align="right">1131</td>
+<td align="left">1.34</td>
+<td align="left">1.28e-11</td>
+<td align="left">Rasd1</td>
+<td align="left">RAS, dexamethasone-induced 1</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000040896</td>
+<td align="right">240</td>
+<td align="left">1.57</td>
+<td align="left">7.56e-11</td>
+<td align="left">Kcnd3</td>
+<td align="left">potassium voltage-gated channel, Shal-related family, member 3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000001864</td>
+<td align="right">424</td>
+<td align="left">1.59</td>
+<td align="left">9.97e-11</td>
+<td align="left">Aif1l</td>
+<td align="left">allograft inflammatory factor 1-like</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000017969</td>
+<td align="right">1412</td>
+<td align="left">1.42</td>
+<td align="left">2.62e-10</td>
+<td align="left">Ptgis</td>
+<td align="left">prostaglandin I2 (prostacyclin) synthase</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000045868</td>
+<td align="right">153</td>
+<td align="left">2.00</td>
+<td align="left">1.37e-09</td>
+<td align="left">Gvin1</td>
+<td align="left">GTPase, very large interferon inducible 1</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000035357</td>
+<td align="right">829</td>
+<td align="left">1.07</td>
+<td align="left">4.89e-08</td>
+<td align="left">Pdzrn3</td>
+<td align="left">PDZ domain containing RING finger 3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000029306</td>
+<td align="right">61</td>
+<td align="left">1.10</td>
+<td align="left">2.10e-06</td>
+<td align="left">Ibsp</td>
+<td align="left">integrin binding sialoprotein</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000096972</td>
+<td align="right">57</td>
+<td align="left">1.02</td>
+<td align="left">2.70e-06</td>
+<td align="left">Gm26883</td>
+<td align="left">predicted gene, 26883</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000007682</td>
+<td align="right">84</td>
+<td align="left">1.13</td>
+<td align="left">1.24e-05</td>
+<td align="left">Dio2</td>
+<td align="left">deiodinase, iodothyronine, type II</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000035686</td>
+<td align="right">712</td>
+<td align="left">1.14</td>
+<td align="left">5.22e-05</td>
+<td align="left">Thrsp</td>
+<td align="left">thyroid hormone responsive</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000030256</td>
+<td align="right">166</td>
+<td align="left">1.11</td>
+<td align="left">1.11e-04</td>
+<td align="left">Bhlhe41</td>
+<td align="left">basic helix-loop-helix family, member e41</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000002633</td>
+<td align="right">381</td>
+<td align="left">1.05</td>
+<td align="left">1.15e-04</td>
+<td align="left">Shh</td>
+<td align="left">sonic hedgehog</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000001665</td>
+<td align="right">252</td>
+<td align="left">1.04</td>
+<td align="left">1.45e-04</td>
+<td align="left">Gstt3</td>
+<td align="left">glutathione S-transferase, theta 3</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000060441</td>
+<td align="right">80</td>
+<td align="left">1.06</td>
+<td align="left">2.52e-04</td>
+<td align="left">Trim5</td>
+<td align="left">tripartite motif-containing 5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>group ctrl vs ko (downregulated)</caption>
+<thead>
+<tr class="header">
+<th align="left">ensgene</th>
+<th align="right">baseMean</th>
+<th align="left">lfc</th>
+<th align="left">padj</th>
+<th align="left">symbol</th>
+<th align="left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ENSMUSG00000020038</td>
+<td align="right">962</td>
+<td align="left">-2.49</td>
+<td align="left">4.37e-51</td>
+<td align="left">Cry1</td>
+<td align="left">cryptochrome 1 (photolyase-like)</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000026442</td>
+<td align="right">980</td>
+<td align="left">-2.88</td>
+<td align="left">8.45e-40</td>
+<td align="left">Nfasc</td>
+<td align="left">neurofascin</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000026077</td>
+<td align="right">1043</td>
+<td align="left">-2.18</td>
+<td align="left">5.01e-25</td>
+<td align="left">Npas2</td>
+<td align="left">neuronal PAS domain protein 2</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000029757</td>
+<td align="right">432</td>
+<td align="left">-2.12</td>
+<td align="left">1.40e-21</td>
+<td align="left">Dync1i1</td>
+<td align="left">dynein cytoplasmic 1 intermediate chain 1</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000027712</td>
+<td align="right">30000</td>
+<td align="left">-1.13</td>
+<td align="left">8.95e-15</td>
+<td align="left">Anxa5</td>
+<td align="left">annexin A5</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000029108</td>
+<td align="right">266</td>
+<td align="left">-1.76</td>
+<td align="left">9.39e-15</td>
+<td align="left">Pcdh7</td>
+<td align="left">protocadherin 7</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000102802</td>
+<td align="right">255</td>
+<td align="left">-1.67</td>
+<td align="left">1.95e-13</td>
+<td align="left">Mgam2-ps</td>
+<td align="left">maltase-glucoamylase 2, pseudogene</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000022790</td>
+<td align="right">1189</td>
+<td align="left">-1.62</td>
+<td align="left">3.57e-12</td>
+<td align="left">Igsf11</td>
+<td align="left">immunoglobulin superfamily, member 11</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000053279</td>
+<td align="right">5065</td>
+<td align="left">-1.47</td>
+<td align="left">1.26e-11</td>
+<td align="left">Aldh1a1</td>
+<td align="left">aldehyde dehydrogenase family 1, subfamily A1</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000023959</td>
+<td align="right">1175</td>
+<td align="left">-1.40</td>
+<td align="left">2.22e-11</td>
+<td align="left">Clic5</td>
+<td align="left">chloride intracellular channel 5</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000028150</td>
+<td align="right">1336</td>
+<td align="left">-1.07</td>
+<td align="left">4.15e-10</td>
+<td align="left">Rorc</td>
+<td align="left">RAR-related orphan receptor gamma</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000050447</td>
+<td align="right">1872</td>
+<td align="left">-1.25</td>
+<td align="left">4.15e-10</td>
+<td align="left">Lypd6</td>
+<td align="left">LY6/PLAUR domain containing 6</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000051359</td>
+<td align="right">1588</td>
+<td align="left">-1.16</td>
+<td align="left">2.73e-09</td>
+<td align="left">Ncald</td>
+<td align="left">neurocalcin delta</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000060044</td>
+<td align="right">523</td>
+<td align="left">-1.27</td>
+<td align="left">2.76e-09</td>
+<td align="left">Tmem26</td>
+<td align="left">transmembrane protein 26</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000062760</td>
+<td align="right">282</td>
+<td align="left">-1.34</td>
+<td align="left">4.84e-09</td>
+<td align="left">1810041L15Rik</td>
+<td align="left">RIKEN cDNA 1810041L15 gene</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000027335</td>
+<td align="right">467</td>
+<td align="left">-1.15</td>
+<td align="left">1.51e-07</td>
+<td align="left">Adra1d</td>
+<td align="left">adrenergic receptor, alpha 1d</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000045094</td>
+<td align="right">87</td>
+<td align="left">-1.39</td>
+<td align="left">1.88e-07</td>
+<td align="left">Arhgef37</td>
+<td align="left">Rho guanine nucleotide exchange factor (GEF) 37</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000037946</td>
+<td align="right">434</td>
+<td align="left">-1.12</td>
+<td align="left">2.58e-07</td>
+<td align="left">Fgd3</td>
+<td align="left">FYVE, RhoGEF and PH domain containing 3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000039208</td>
+<td align="right">613</td>
+<td align="left">-1.09</td>
+<td align="left">4.09e-07</td>
+<td align="left">Metrnl</td>
+<td align="left">meteorin, glial cell differentiation regulator-like</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000037705</td>
+<td align="right">140</td>
+<td align="left">-1.23</td>
+<td align="left">9.51e-06</td>
+<td align="left">Tecta</td>
+<td align="left">tectorin alpha</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000063659</td>
+<td align="right">883</td>
+<td align="left">-1.22</td>
+<td align="left">9.51e-06</td>
+<td align="left">Zbtb18</td>
+<td align="left">zinc finger and BTB domain containing 18</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000028179</td>
+<td align="right">1086</td>
+<td align="left">-1.08</td>
+<td align="left">1.64e-05</td>
+<td align="left">Cth</td>
+<td align="left">cystathionase (cystathionine gamma-lyase)</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000055305</td>
+<td align="right">221</td>
+<td align="left">-1.16</td>
+<td align="left">1.90e-05</td>
+<td align="left">Zfp93</td>
+<td align="left">zinc finger protein 93</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000028359</td>
+<td align="right">181</td>
+<td align="left">-1.16</td>
+<td align="left">1.95e-05</td>
+<td align="left">Orm3</td>
+<td align="left">orosomucoid 3</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000031543</td>
+<td align="right">298</td>
+<td align="left">-1.04</td>
+<td align="left">5.54e-05</td>
+<td align="left">Ank1</td>
+<td align="left">ankyrin 1, erythroid</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000036545</td>
+<td align="right">404</td>
+<td align="left">-1.10</td>
+<td align="left">1.45e-04</td>
+<td align="left">Adamts2</td>
+<td align="left">a disintegrin-like and metallopeptidase (reprolysin type) with thrombospondin type 1 motif, 2</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSMUSG00000097836</td>
+<td align="right">62</td>
+<td align="left">-1.03</td>
+<td align="left">2.29e-04</td>
+<td align="left">Gm26903</td>
+<td align="left">predicted gene, 26903</td>
+</tr>
+<tr class="even">
+<td align="left">ENSMUSG00000025321</td>
+<td align="right">1104</td>
+<td align="left">-1.01</td>
+<td align="left">5.58e-04</td>
+<td align="left">Itgb8</td>
+<td align="left">integrin beta 8</td>
+</tr>
+</tbody>
+</table>
 <hr />
 </div>
 <div id="methods" class="section level1">
@@ -472,7 +901,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ## 
 ## $design
 ## ~group
-## &lt;environment: 0x1e10dfa0&gt;
+## &lt;environment: 0x1dc195f8&gt;
 ## 
 ## $contrast
 ## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
@@ -713,7 +1142,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ##  cran (@1.10.4-)                     
 ##  local                               
 ##  cran (@0.7)                         
-##  Github (lpantano/DEGreport@41832eb) 
+##  Github (lpantano/DEGreport@21caf9e) 
 ##  cran (@0.4.1)                       
 ##  cran (@0.3.3)                       
 ##  cran (@1.18.1)                      
