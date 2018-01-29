@@ -7,7 +7,7 @@ unlink("report", recursive = TRUE)
 uploadDir <- tools::file_path_as_absolute(file.path("."))
 print(uploadDir)
 library(bcbioRNASeq)
-bcb <- loadRNASeqRun(
+bcb <- loadRNASeq(
     uploadDir,
     interestingGroups = c("group")
 )
