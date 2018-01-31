@@ -285,8 +285,8 @@ dataDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(params$o
 countsDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(params$outputDir, <span class="st">&quot;results&quot;</span>, <span class="kw">Sys.Date</span>(), <span class="st">&quot;counts&quot;</span>)
 deDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(params$outputDir, <span class="st">&quot;results&quot;</span>, <span class="kw">Sys.Date</span>(), <span class="st">&quot;differential_expression&quot;</span>)
 <span class="kw">invisible</span>(<span class="kw">mapply</span>(
-    <span class="kw">list</span>(dataDir, countsDir, deDir),
     <span class="dt">FUN =</span> dir.create,
+    <span class="kw">list</span>(dataDir, countsDir, deDir),
     <span class="dt">MoreArgs =</span> <span class="kw">list</span>(<span class="dt">recursive =</span> <span class="ot">TRUE</span>, <span class="dt">showWarnings =</span> <span class="ot">FALSE</span>)
 ))
 
@@ -901,7 +901,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcbName, <span cla
 ## 
 ## $design
 ## ~group
-## &lt;environment: 0x1ddc3c50&gt;
+## &lt;environment: 0x1dc2ffb0&gt;
 ## 
 ## $contrast
 ## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
