@@ -306,11 +306,20 @@ countsDir &lt;-<span class="st"> </span><span class="kw">file.path</span>(params
   </script>
 </div>
 <p><a href="https://github.com/chapmanb/bcbio-nextgen">bcbio</a> run data was imported from <strong>/home/travis/build/hbc/bcbio_rnaseq_output_example</strong>.</p>
+</div>
+<div id="count-matrices" class="section level1">
+<h1>Count matrices</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>rawCounts &lt;-<span class="st"> </span><span class="kw">counts</span>(bcb, <span class="dt">normalized =</span> <span class="ot">FALSE</span>)
 &gt;<span class="st"> </span>normalizedCounts &lt;-<span class="st"> </span><span class="kw">counts</span>(bcb, <span class="dt">normalized =</span> <span class="ot">TRUE</span>)
 &gt;<span class="st"> </span>tpm &lt;-<span class="st"> </span><span class="kw">counts</span>(bcb, <span class="dt">normalized =</span> <span class="st">&quot;tpm&quot;</span>)
 &gt;<span class="st"> </span><span class="kw">saveData</span>(rawCounts, normalizedCounts, tpm, <span class="dt">dir =</span> dataDir)
 &gt;<span class="st"> </span><span class="kw">writeCounts</span>(rawCounts, normalizedCounts, tpm, <span class="dt">dir =</span> countsDir)</code></pre></div>
+<p>The results are saved as gzip-compressed comma separated values (CSV). Gzip compression is natively supported on <a href="https://www.apple.com/macos">macOS</a> and Linux-based operating systems. If you’re running Windows, we recommend installing <a href="http://www.7-zip.org">7-Zip</a>. CSV files can be opened in <a href="https://products.office.com/en-us/excel">Excel</a> or <a href="https://www.rstudio.com">RStudio</a>.</p>
+<ul>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-02-06/counts/normalizedCounts.csv.gz"><code>normalizedCounts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-02-06/counts/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-02-06/counts/rawCounts.csv.gz"><code>rawCounts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
+</ul>
 </div>
 <div id="read-metrics" class="section level1 tabset">
 <h1>Read metrics</h1>
