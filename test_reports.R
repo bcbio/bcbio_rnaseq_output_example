@@ -9,7 +9,8 @@ print(uploadDir)
 library(bcbioRNASeq)
 bcb <- loadRNASeq(
     uploadDir,
-    interestingGroups = c("group")
+    interestingGroups = c("group"),
+    organism = "Homo sapiens"
 )
 
 dir.create("report")
@@ -33,8 +34,8 @@ test_that("qc", {
                            "templates", "quality_control",
                            "skeleton")
     file.copy(file.path(reportDir, "skeleton.Rmd"), "qc.Rmd", overwrite = TRUE)
-    render("qc.Rmd", params = list(bcbFile = "data/bcb.rda",
-                                   outputDir = outputDir))
+    render("qc.Rmd", params = list(bcb_file = "data/bcb.rda",
+                                   results_dir = outputDir))
 })
 
 test_that("de", {
@@ -43,10 +44,10 @@ test_that("de", {
                            "templates", "differential_expression",
                            "skeleton")
     file.copy(file.path(reportDir, "skeleton.Rmd"), "de.Rmd", overwrite = TRUE)
-    render("de.Rmd", params = list(bcbFile = "data/bcb.rda",
+    render("de.Rmd", params = list(bcb_file = "data/bcb.rda",
                                    design = formula(~group),
                                    contrast = c("group", "ctrl", "ko"),
-                                   outputDir = outputDir))
+                                   results_dir = outputDir))
 })
 
 # test_that("fa", {
