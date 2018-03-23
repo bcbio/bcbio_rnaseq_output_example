@@ -10,7 +10,7 @@ library(bcbioRNASeq)
 bcb <- loadRNASeq(
     uploadDir,
     interestingGroups = c("group"),
-    organism = "Homo sapiens"
+    organism = "Mus musculus"
 )
 
 dir.create("report")
