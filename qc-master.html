@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2018-04-18" />
+<meta name="date" content="2018-04-19" />
 
 <title>Quality Control</title>
 
@@ -265,7 +265,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Quality Control</h1>
-<h4 class="date"><em>2018-04-18</em></h4>
+<h4 class="date"><em>2018-04-19</em></h4>
 
 </div>
 
@@ -497,7 +497,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       UTC                         
-##  date     2018-04-18                  
+##  date     2018-04-19                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package                * version    date      
@@ -528,13 +528,13 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 ##  backports                1.1.2      2017-12-13
 ##  base64enc                0.1-3      2015-07-28
 ##  basejump               * 0.5.1      2018-04-16
-##  bcbioBase              * 0.2.2      2018-04-16
-##  bcbioRNASeq            * 0.2.1      2018-04-18
+##  bcbioBase              * 0.2.3      2018-04-19
+##  bcbioRNASeq            * 0.2.1      2018-04-19
 ##  bindr                    0.1.1      2018-03-13
 ##  bindrcpp               * 0.2        2017-06-17
 ##  Biobase                * 2.38.0     2018-03-19
 ##  BiocGenerics           * 0.24.0     2018-03-19
-##  BiocInstaller            1.28.0     2018-04-18
+##  BiocInstaller            1.28.0     2018-04-19
 ##  BiocParallel             1.12.0     2018-03-19
 ##  biomaRt                  2.34.2     2018-03-19
 ##  Biostrings               2.46.0     2018-03-19
@@ -710,7 +710,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 ##  CRAN (R 3.4.4)                      
 ##  CRAN (R 3.4.4)                      
 ##  Github (steinbaugh/basejump@3fef236)
-##  Github (hbc/bcbioBase@fa26b20)      
+##  Github (hbc/bcbioBase@1bb49bf)      
 ##  local (hbc/bcbioRNASeq@NA)          
 ##  CRAN (R 3.4.4)                      
 ##  CRAN (R 3.4.4)                      
@@ -895,10 +895,10 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 ##  [5] purrr_0.2.4                readr_1.1.1               
 ##  [7] tidyr_0.8.0                tibble_1.4.2              
 ##  [9] ggplot2_2.2.1              tidyverse_1.2.1           
-## [11] DEGreport_1.15.5           quantreg_5.35             
-## [13] SparseM_1.77               knitr_1.20                
+## [11] knitr_1.20                 DEGreport_1.15.5          
+## [13] quantreg_5.35              SparseM_1.77              
 ## [15] bindrcpp_0.2               bcbioRNASeq_0.2.1         
-## [17] DESeq2_1.18.1              bcbioBase_0.2.2           
+## [17] DESeq2_1.18.1              bcbioBase_0.2.3           
 ## [19] basejump_0.5.1             SummarizedExperiment_1.8.1
 ## [21] DelayedArray_0.4.1         matrixStats_0.53.1        
 ## [23] Biobase_2.38.0             GenomicRanges_1.30.3      
@@ -990,9 +990,11 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 <div id="setup.r" class="section level2">
 <h2><code>_setup.R</code></h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>readr::<span class="kw">read_lines</span>(<span class="st">&quot;_setup.R&quot;</span>) %&gt;%<span class="st"> </span><span class="kw">writeLines</span>()</code></pre></div>
-<pre><code>## library(knitr)
+<pre><code>## library(bcbioRNASeq)
+## library(DESeq2)
 ## library(DEGreport)
-## library(bcbioRNASeq)
+## 
+## library(knitr)
 ## library(tidyverse)
 ## 
 ## # Set seed for reproducibility
