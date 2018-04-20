@@ -401,7 +401,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 <h1>Results tables</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span>res_tbl &lt;-<span class="st"> </span><span class="kw">resultsTables</span>(res, <span class="dt">lfc =</span> params$lfc, <span class="dt">rowData =</span> <span class="kw">rowData</span>(bcb), <span class="dt">write =</span> <span class="ot">TRUE</span>, 
 +<span class="st">     </span><span class="dt">summary =</span> <span class="ot">TRUE</span>, <span class="dt">headerLevel =</span> <span class="dv">2</span>, <span class="dt">dir =</span> params$results_dir, <span class="dt">dropboxDir =</span> params$dropbox_dir)</code></pre></div>
-<pre><code>## Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'resultsTables' for signature '&quot;DESeqResults&quot;, &quot;missing&quot;'</code></pre>
+<pre><code>## Error in .local(results, counts, ...): unused arguments (rowData = rowData(bcb), write = TRUE, summary = TRUE, headerLevel = 2, dir = params$results_dir, dropboxDir = params$dropbox_dir)</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">saveData</span>(res_tbl, <span class="dt">dir =</span> params$data_dir)</code></pre></div>
 <pre><code>## Error in saveData(res_tbl, dir = params$data_dir): object 'res_tbl' not found</code></pre>
 <p>Differentially expressed gene (DEG) tables are sorted by BH-adjusted P value, and contain the following columns:</p>
@@ -448,7 +448,7 @@ bcb &lt;-<span class="st"> </span><span class="kw">get</span>(bcb_name, <span cl
 ## 
 ## $design
 ## ~group
-## &lt;environment: 0x1f71b9b0&gt;
+## &lt;environment: 0x11dca368&gt;
 ## 
 ## $contrast
 ## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
