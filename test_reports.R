@@ -1,68 +1,100 @@
 context("Reports")
+
 library(rmarkdown)
 library(bcbioRNASeq)
 
-unlink("report", recursive = TRUE)
+# R Markdown source templates from package
+templates_dir <- system.file("rmarkdown/templates", package = "bcbioRNASeq")
 
-uploadDir <- tools::file_path_as_absolute(file.path("."))
-print(uploadDir)
-library(bcbioRNASeq)
-bcb <- loadRNASeq(
-    uploadDir,
-    interestingGroups = c("group"),
+bcb <- bcbioRNASeq(
+    uploadDir = ".",
+    interestingGroups = "group",
     organism = "Mus musculus"
 )
+print(bcb)
 
+unlink("report", recursive = TRUE)
 dir.create("report")
 setwd("report")
 
-saveData(bcb, dir = "data")
+prepareRNASeqTemplate(overwrite = TRUE)
 
-outputDir <- tools::file_path_as_absolute(file.path("."))
+data_dir <- normalizePath("data")
+results_dir <- normalizePath(".")
 
-extraDir <- system.file("extra", package = "bcbioRNASeq")
-miscDir <- file.path("..",  "..", "bcbioRNASeq",
-                     "inst", "rmarkdown", "shared")
+bcb_file <- saveData(bcb, dir = data_dir)
+res_file <- file.path(data_dir, "res.rda")
 
-print(list.files(miscDir, full.names = TRUE))
-file.copy(list.files(miscDir, full.names = TRUE), ".",
-          overwrite = TRUE, recursive = TRUE)
-
-test_that("qc", {
-    reportDir <- file.path("..", "..", "bcbioRNASeq",
-                           "inst", "rmarkdown",
-                           "templates", "quality_control",
-                           "skeleton")
-    file.copy(file.path(reportDir, "skeleton.Rmd"), "qc.Rmd", overwrite = TRUE)
-    render("qc.Rmd", params = list(bcb_file = "data/bcb.rda",
-                                   results_dir = outputDir))
+test_that("Quality Control", {
+    file.copy(
+        from = file.path(
+            templates_dir,
+            "quality_control",
+            "skeleton",
+            "skeleton.Rmd"
+        ),
+        to = "qc.Rmd",
+        overwrite = TRUE
+    )
+    x <- render(
+        input = "qc.Rmd",
+        params = list(
+            bcb_file = bcb_file,
+            data_dir = data_dir,
+            results_dir = results_dir
+        )
+    )
+    expect_identical(basename(x), "qc.html")
 })
 
-test_that("de", {
-    reportDir <- file.path("..",  "..", "bcbioRNASeq",
-                           "inst", "rmarkdown",
-                           "templates", "differential_expression",
-                           "skeleton")
-    file.copy(file.path(reportDir, "skeleton.Rmd"), "de.Rmd", overwrite = TRUE)
-    render("de.Rmd", params = list(bcb_file = "data/bcb.rda",
-                                   design = formula(~group),
-                                   contrast = c("group", "ctrl", "ko"),
-                                   results_dir = outputDir))
+test_that("Differential Expression", {
+    file.copy(
+        from = file.path(
+            templates_dir,
+            "differential_expression",
+            "skeleton",
+            "skeleton.Rmd"
+        ),
+        to = "de.Rmd",
+        overwrite = TRUE
+    )
+    x <- render(
+        input = "de.Rmd",
+        params = list(
+            bcb_file = bcb_file,
+            design = formula("~group"),
+            contrast = c("group", "ctrl", "ko"),
+            data_dir = data_dir,
+            results_dir = results_dir
+        )
+    )
+    expect_identical(basename(x), "de.html")
 })
 
-# test_that("fa", {
-#     reportDir <- file.path("..",  "..", "bcbioRNASeq",
-#                            "inst", "rmarkdown",
-#                            "templates", "functional_analysis",
-#                            "skeleton")
-#     file.copy(file.path(reportDir, "skeleton.Rmd"), "fa.Rmd", overwrite = TRUE)
-#     render("fa.Rmd", params = list(bcbFile = "data/bcb.rda",
-#                                    outputDir = outputDir))
-#
-# })
-
-
-load("data/bcb.rda")
-print(bcb)
+test_that("Functional Analysis", {
+    file.copy(
+        from = file.path(
+            templates_dir,
+            "functional_analysis",
+            "skeleton",
+            "skeleton.Rmd"
+        ),
+        to = "fa.Rmd",
+        overwrite = TRUE
+    )
+    x <- render(
+        input = "fa.Rmd",
+        params = list(
+            bcb_file = bcb_file,
+            res_file = res_file,
+            organism = "Mm",
+            gspecies = "mmu",
+            species = "mouse",
+            data_dir = data_dir,
+            results_dir = results_dir
+        )
+    )
+    expect_identical(basename(x), "fa.html")
+})
 
 setwd("..")
