@@ -6,11 +6,16 @@ library(bcbioRNASeq)
 # R Markdown source templates from package
 templates_dir <- system.file("rmarkdown/templates", package = "bcbioRNASeq")
 
-bcb <- bcbioRNASeq(
+# An old, unknown Ensembl release was used to save the example run.
+# Using release 87, which is the oldest currently supported by AnnotationHub.
+# A warning about 173 unannotated genes is expected.
+bcb <- suppressWarnings(bcbioRNASeq(
     uploadDir = ".",
     interestingGroups = "group",
-    organism = "Mus musculus"
-)
+    organism = "Mus musculus",
+    ensemblRelease = 87
+))
+stopifnot(is(bcb, "bcbioRNASeq"))
 print(bcb)
 
 unlink("report", recursive = TRUE)
@@ -19,10 +24,9 @@ setwd("report")
 
 prepareRNASeqTemplate(overwrite = TRUE)
 
-data_dir <- normalizePath("data")
-results_dir <- normalizePath(".")
-
+data_dir <- "data"
 bcb_file <- saveData(bcb, dir = data_dir)
+dds_file <- file.path(data_dir, "dds.rda")
 res_file <- file.path(data_dir, "res.rda")
 
 test_that("Quality Control", {
@@ -40,8 +44,7 @@ test_that("Quality Control", {
         input = "qc.Rmd",
         params = list(
             bcb_file = bcb_file,
-            data_dir = data_dir,
-            results_dir = results_dir
+            data_dir = data_dir
         )
     )
     expect_identical(basename(x), "qc.html")
@@ -64,8 +67,7 @@ test_that("Differential Expression", {
             bcb_file = bcb_file,
             design = formula("~group"),
             contrast = c("group", "ctrl", "ko"),
-            data_dir = data_dir,
-            results_dir = results_dir
+            data_dir = data_dir
         )
     )
     expect_identical(basename(x), "de.html")
@@ -85,13 +87,10 @@ test_that("Functional Analysis", {
     x <- render(
         input = "fa.Rmd",
         params = list(
-            bcb_file = bcb_file,
+            dds_file = dds_file,
             res_file = res_file,
-            organism = "Mm",
-            gspecies = "mmu",
-            species = "mouse",
-            data_dir = data_dir,
-            results_dir = results_dir
+            organism = "Mus musculus",
+            data_dir = data_dir
         )
     )
     expect_identical(basename(x), "fa.html")
