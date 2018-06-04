@@ -11,7 +11,7 @@
 
 <meta name="author" content />
 
-<meta name="date" content="2018-05-31" />
+<meta name="date" content="2018-06-04" />
 
 <title>Quality Control</title>
 
@@ -2876,7 +2876,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Quality Control</h1>
-<h4 class="date"><em>2018-05-31</em></h4>
+<h4 class="date"><em>2018-06-04</em></h4>
 
 </div>
 
@@ -2923,12 +2923,12 @@ div.tocify {
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="op">&gt;</span><span class="st"> </span><span class="kw">saveData</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>data_dir)</a></code></pre></div>
 <pre><code>## Saving raw_counts.rda, normalized_counts.rda, tpm.rda to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/data</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">writeCounts</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>results_dir)</a></code></pre></div>
-<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-05-31/counts</code></pre>
+<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-06-04/counts</code></pre>
 <p>The results are saved as gzip-compressed comma separated values (CSV). Gzip compression is natively supported on <a href="https://www.apple.com/macos">macOS</a> and Linux-based operating systems. If you’re running Windows, we recommend installing <a href="http://www.7-zip.org">7-Zip</a>. CSV files can be opened in <a href="https://products.office.com/en-us/excel">Excel</a> or <a href="https://www.rstudio.com">RStudio</a>.</p>
 <ul>
-<li><a href="results/2018-05-31/counts/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
-<li><a href="results/2018-05-31/counts/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
-<li><a href="results/2018-05-31/counts/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
+<li><a href="results/2018-06-04/counts/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
+<li><a href="results/2018-06-04/counts/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
+<li><a href="results/2018-06-04/counts/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
 </ul>
 </div>
 <div id="read-metrics" class="section level1 tabset">
@@ -3088,7 +3088,7 @@ div.tocify {
 <h2>YAML params</h2>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">print</span>(params)</a></code></pre></div>
 <pre><code>## $results_dir
-## [1] &quot;results/2018-05-31/counts&quot;
+## [1] &quot;results/2018-06-04/counts&quot;
 ## 
 ## $bcb_file
 ##                                                                      bcb 
@@ -3150,7 +3150,7 @@ div.tocify {
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       UTC                         
-##  date     2018-05-31                  
+##  date     2018-06-04                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package                * version   date      
@@ -3175,12 +3175,12 @@ div.tocify {
 ##  base64enc                0.1-3     2015-07-28
 ##  basejump               * 0.5.7     2018-05-31
 ##  bcbioBase              * 0.2.14    2018-05-31
-##  bcbioRNASeq            * 0.2.4     2018-05-31
+##  bcbioRNASeq            * 0.2.4     2018-06-04
 ##  bindr                    0.1.1     2018-03-13
 ##  bindrcpp               * 0.2.2     2018-03-29
 ##  Biobase                * 2.40.0    2018-05-07
 ##  BiocGenerics           * 0.26.0    2018-05-07
-##  BiocInstaller            1.30.0    2018-05-31
+##  BiocInstaller            1.30.0    2018-06-04
 ##  BiocParallel           * 1.14.1    2018-05-07
 ##  biomaRt                  2.36.0    2018-05-07
 ##  Biostrings               2.48.0    2018-05-07
@@ -3205,7 +3205,7 @@ div.tocify {
 ##  data.table               1.11.0    2018-05-01
 ##  DBI                      1.0.0     2018-05-02
 ##  DEGreport              * 1.17.1    2018-05-31
-##  DelayedArray           * 0.6.0     2018-05-31
+##  DelayedArray           * 0.6.0     2018-06-04
 ##  dendsort                 0.3.3     2015-12-14
 ##  DESeq2                 * 1.20.0    2018-05-07
 ##  digest                   0.6.15    2018-01-28
@@ -3219,7 +3219,7 @@ div.tocify {
 ##  genefilter               1.62.0    2018-05-07
 ##  geneplotter              1.58.0    2018-05-07
 ##  GenomeInfoDb           * 1.16.0    2018-05-07
-##  GenomeInfoDbData         1.1.0     2018-05-31
+##  GenomeInfoDbData         1.1.0     2018-06-04
 ##  GenomicAlignments        1.16.0    2018-05-07
 ##  GenomicFeatures          1.32.0    2018-05-07
 ##  GenomicRanges          * 1.32.3    2018-05-31
