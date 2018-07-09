@@ -11,7 +11,7 @@
 
 <meta name="author" content />
 
-<meta name="date" content="2018-07-04" />
+<meta name="date" content="2018-07-09" />
 
 <title>Differential Expression</title>
 
@@ -2879,7 +2879,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Differential Expression</h1>
-<h4 class="date"><em>2018-07-04</em></h4>
+<h4 class="date"><em>2018-07-09</em></h4>
 
 </div>
 
@@ -3021,15 +3021,15 @@ div.tocify {
 <li>DEG LFC up: 93 genes</li>
 <li>DEG LFC down: 58 genes</li>
 </ul>
-<pre><code>## Writing group_ko_vs_ctrl_all.csv.gz, group_ko_vs_ctrl_deg.csv.gz, group_ko_vs_ctrl_deg_lfc_up.csv.gz, group_ko_vs_ctrl_deg_lfc_down.csv.gz to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-04/differential_expression</code></pre>
+<pre><code>## Writing group_ko_vs_ctrl_all.csv.gz, group_ko_vs_ctrl_deg.csv.gz, group_ko_vs_ctrl_deg_lfc_up.csv.gz, group_ko_vs_ctrl_deg_lfc_down.csv.gz to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-09/differential_expression</code></pre>
 </div>
 <div id="results-tables-1" class="section level3">
 <h3>Results tables</h3>
 <ul>
-<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-04/differential_expression/group_ko_vs_ctrl_all.csv.gz"><code>group_ko_vs_ctrl_all.csv.gz</code></a>: All genes, sorted by Ensembl identifier.</li>
-<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-04/differential_expression/group_ko_vs_ctrl_deg.csv.gz"><code>group_ko_vs_ctrl_deg.csv.gz</code></a>: Genes that pass the alpha (FDR) cutoff.</li>
-<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-04/differential_expression/group_ko_vs_ctrl_deg_lfc_up.csv.gz"><code>group_ko_vs_ctrl_deg_lfc_up.csv.gz</code></a>: Upregulated DEG; positive log2 fold change.</li>
-<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-04/differential_expression/group_ko_vs_ctrl_deg_lfc_down.csv.gz"><code>group_ko_vs_ctrl_deg_lfc_down.csv.gz</code></a>: Downregulated DEG; negative log2 fold change.</li>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-09/differential_expression/group_ko_vs_ctrl_all.csv.gz"><code>group_ko_vs_ctrl_all.csv.gz</code></a>: All genes, sorted by Ensembl identifier.</li>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-09/differential_expression/group_ko_vs_ctrl_deg.csv.gz"><code>group_ko_vs_ctrl_deg.csv.gz</code></a>: Genes that pass the alpha (FDR) cutoff.</li>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-09/differential_expression/group_ko_vs_ctrl_deg_lfc_up.csv.gz"><code>group_ko_vs_ctrl_deg_lfc_up.csv.gz</code></a>: Upregulated DEG; positive log2 fold change.</li>
+<li><a href="/home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-09/differential_expression/group_ko_vs_ctrl_deg_lfc_down.csv.gz"><code>group_ko_vs_ctrl_deg_lfc_down.csv.gz</code></a>: Downregulated DEG; negative log2 fold change.</li>
 </ul>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">saveData</span>(res_tbl, <span class="dt">dir =</span> params<span class="op">$</span>data_dir)</a></code></pre></div>
 <pre><code>## Saving res_tbl.rda to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/data</code></pre>
@@ -4000,7 +4000,7 @@ div.tocify {
 ## [1] 0
 ## 
 ## $results_dir
-## [1] &quot;results/2018-07-04/differential_expression&quot;
+## [1] &quot;results/2018-07-09/differential_expression&quot;
 ## 
 ## $dropbox_dir
 ## NULL
@@ -4011,7 +4011,7 @@ div.tocify {
 ## 
 ## $design
 ## ~group
-## &lt;environment: 0x303fb8d0&gt;
+## &lt;environment: 0x30274f10&gt;
 ## 
 ## $contrast
 ## [1] &quot;group&quot; &quot;ctrl&quot;  &quot;ko&quot;   
@@ -4071,7 +4071,7 @@ div.tocify {
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       UTC                         
-##  date     2018-07-04                  
+##  date     2018-07-09                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package                * version   date      
@@ -4096,12 +4096,12 @@ div.tocify {
 ##  base64enc                0.1-3     2015-07-28
 ##  basejump               * 0.5.10    2018-07-02
 ##  bcbioBase              * 0.2.16    2018-07-02
-##  bcbioRNASeq            * 0.2.5     2018-07-04
+##  bcbioRNASeq            * 0.2.5     2018-07-09
 ##  bindr                    0.1.1     2018-03-13
 ##  bindrcpp               * 0.2.2     2018-03-29
 ##  Biobase                * 2.40.0    2018-05-07
 ##  BiocGenerics           * 0.26.0    2018-05-07
-##  BiocInstaller            1.30.0    2018-07-04
+##  BiocInstaller            1.30.0    2018-07-09
 ##  BiocParallel           * 1.14.1    2018-05-07
 ##  biomaRt                  2.36.0    2018-05-07
 ##  Biostrings               2.48.0    2018-05-07
@@ -4125,7 +4125,7 @@ div.tocify {
 ##  curl                     3.2       2018-03-28
 ##  data.table               1.11.4    2018-05-27
 ##  DBI                      1.0.0     2018-05-02
-##  DEGreport              * 1.16.0    2018-07-04
+##  DEGreport              * 1.16.0    2018-07-09
 ##  DelayedArray           * 0.6.1     2018-06-15
 ##  dendsort                 0.3.3     2015-12-14
 ##  DESeq2                 * 1.20.0    2018-05-07
@@ -4140,7 +4140,7 @@ div.tocify {
 ##  genefilter               1.62.0    2018-05-07
 ##  geneplotter              1.58.0    2018-05-07
 ##  GenomeInfoDb           * 1.16.0    2018-05-07
-##  GenomeInfoDbData         1.1.0     2018-07-04
+##  GenomeInfoDbData         1.1.0     2018-07-09
 ##  GenomicAlignments        1.16.0    2018-05-07
 ##  GenomicFeatures          1.32.0    2018-05-07
 ##  GenomicRanges          * 1.32.3    2018-05-31
@@ -4223,7 +4223,7 @@ div.tocify {
 ##  rstudioapi               0.7       2017-09-07
 ##  rtracklayer              1.40.3    2018-06-12
 ##  rvest                    0.3.2     2016-06-17
-##  S4Vectors              * 0.18.3    2018-07-04
+##  S4Vectors              * 0.18.3    2018-07-09
 ##  scales                   0.5.0     2017-08-24
 ##  sessioninfo              1.0.0     2017-06-21
 ##  shape                    1.4.4     2018-02-07
