@@ -11,7 +11,7 @@
 
 <meta name="author" content />
 
-<meta name="date" content="2018-07-28" />
+<meta name="date" content="2018-07-29" />
 
 <title>Quality Control</title>
 
@@ -2861,12 +2861,12 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Quality Control</h1>
-<h4 class="date"><em>2018-07-28</em></h4>
+<h4 class="date"><em>2018-07-29</em></h4>
 
 </div>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Last modified 2018-06-29</span></a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Last modified 2018-07-29</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">bcbioRNASeq<span class="op">::</span><span class="kw">prepareRNASeqTemplate</span>()</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">source</span>(<span class="st">&quot;_setup.R&quot;</span>)</a>
 <a class="sourceLine" id="cb1-4" data-line-number="4"></a>
@@ -2920,12 +2920,12 @@ div.tocify {
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="er">&gt;</span><span class="st"> </span><span class="kw">saveData</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>data_dir)</a></code></pre></div>
 <pre><code>## Saving raw_counts.rda, normalized_counts.rda, tpm.rda to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/data</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">writeCounts</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>results_dir)</a></code></pre></div>
-<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-28/quality_control</code></pre>
+<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-29/quality_control</code></pre>
 <p>The results are saved as gzip-compressed comma separated values (CSV). Gzip compression is natively supported on <a href="https://www.apple.com/macos">macOS</a> and Linux-based operating systems. If you’re running Windows, we recommend installing <a href="http://www.7-zip.org">7-Zip</a>. CSV files can be opened in <a href="https://products.office.com/en-us/excel">Excel</a> or <a href="https://www.rstudio.com">RStudio</a>.</p>
 <ul>
-<li><a href="results/2018-07-28/quality_control/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
-<li><a href="results/2018-07-28/quality_control/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
-<li><a href="results/2018-07-28/quality_control/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
+<li><a href="results/2018-07-29/quality_control/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
+<li><a href="results/2018-07-29/quality_control/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
+<li><a href="results/2018-07-29/quality_control/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
 </ul>
 </div>
 <div id="read-metrics" class="section level1 tabset">
@@ -3014,7 +3014,7 @@ div.tocify {
 <div id="counts-per-gene" class="section level2">
 <h2>Counts per gene</h2>
 <p>Generally, we expect similar count spreads for all genes between samples unless the library sizes or total RNA expression are different.</p>
-<p>We recommend visualizing counts normalized with the Trimmed Mean of M-Values (TMM) method here <span class="citation">(<span class="citeproc-not-found" data-reference-id="Robinson:2010dd"><strong>???</strong></span>)</span>. TMM normalization equates the overall expression levels of genes between samples under the assumption that the majority of them are not differentially expressed. Therefore, by normalizing for total RNA expression by sample, we expect the spread of the TMM-normalized counts per gene to be similar for every sample.</p>
+<p>We recommend visualizing counts normalized with the Trimmed Mean of M-Values (TMM) method here <span class="citation">(Robinson and Oshlack 2010)</span>. TMM normalization equates the overall expression levels of genes between samples under the assumption that the majority of them are not differentially expressed. Therefore, by normalizing for total RNA expression by sample, we expect the spread of the TMM-normalized counts per gene to be similar for every sample.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="co"># getMethod(&quot;plotCountsPerGene&quot;, &quot;bcbioRNASeq&quot;)</span></a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="er">&gt;</span><span class="st"> </span><span class="kw">plotCountsPerGene</span>(bcb, <span class="dt">normalized =</span> <span class="st">&quot;tmm&quot;</span>)</a></code></pre></div>
 <pre><code>## 29858 non-zero genes detected</code></pre>
@@ -3068,10 +3068,10 @@ div.tocify {
 </div>
 <div id="sample-similarity-analysis" class="section level1">
 <h1>Sample similarity analysis</h1>
-<p>Before performing similarity analysis, we transform counts to log2, which acts to minimize large differences in sequencing depth and helps normalize all samples to a similar dynamic range. For RNA-seq count data, variance increases with the mean. Logarithmic transformation of normalized count values with a small pseudocount will account for large variations seen between the highest expressing genes so that these genes won’t dominate the PCA plots. However, due to the strong noise among low count values due to Poisson, the general log2 transformation will amplify this noise, and instead, low count genes will now dominate the PCA plots. So instead, we use a regularized log (“rlog”; base 2) transformation that gives similar results for high counts as a log2 transformation but also shrinks the values of low counts towards the genes’ average across samples. We do this with the <code>rlog()</code> function in the <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> package <span class="citation">(<span class="citeproc-not-found" data-reference-id="DESeq2"><strong>???</strong></span>)</span>, which we will later use for differential gene expression analysis.</p>
+<p>Before performing similarity analysis, we transform counts to log2, which acts to minimize large differences in sequencing depth and helps normalize all samples to a similar dynamic range. For RNA-seq count data, variance increases with the mean. Logarithmic transformation of normalized count values with a small pseudocount will account for large variations seen between the highest expressing genes so that these genes won’t dominate the PCA plots. However, due to the strong noise among low count values due to Poisson, the general log2 transformation will amplify this noise, and instead, low count genes will now dominate the PCA plots. So instead, we use a regularized log (“rlog”; base 2) transformation that gives similar results for high counts as a log2 transformation but also shrinks the values of low counts towards the genes’ average across samples. We do this with the <code>rlog()</code> function in the <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> package <span class="citation">(Love, Huber, and Anders 2014)</span>, which we will later use for differential gene expression analysis.</p>
 <div id="principal-component-analysis-pca" class="section level2 tabset">
 <h2>Principal component analysis (PCA)</h2>
-<p>PCA <span class="citation">(<span class="citeproc-not-found" data-reference-id="Jolliffe:2002wx"><strong>???</strong></span>)</span> is a multivariate technique that allows us to summarize the systematic patterns of variations in the data. PCA takes the expression levels for genes and transforms it in principal component space, reducing each sample into one point. Thereby, we can separate samples by expression variation, and identify potential sample outliers. The PCA plot is a way to look at how samples are clustering.</p>
+<p>PCA <span class="citation">(Jolliffe 2002)</span> is a multivariate technique that allows us to summarize the systematic patterns of variations in the data. PCA takes the expression levels for genes and transforms it in principal component space, reducing each sample into one point. Thereby, we can separate samples by expression variation, and identify potential sample outliers. The PCA plot is a way to look at how samples are clustering.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="co"># getMethod(&quot;plotPCA&quot;, &quot;bcbioRNASeq&quot;)</span></a>
 <a class="sourceLine" id="cb36-2" data-line-number="2"><span class="er">&gt;</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb36-3" data-line-number="3"><span class="er">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;Labeled&quot;</span>, <span class="dt">level =</span> <span class="dv">3</span>)</a></code></pre></div>
@@ -3135,7 +3135,7 @@ div.tocify {
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
-<p>RNA-seq counts were generated by <a href="https://github.com/chapmanb/bcbio-nextgen">bcbio</a> and <a href="http://bioinformatics.sph.harvard.edu/bcbioRNASeq">bcbioRNASeq</a> using <a href="https://combine-lab.github.io/salmon">salmon</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="salmon"><strong>???</strong></span>)</span>. Counts were imported into <a href="https://www.r-project.org">R</a> using <a href="https://bioconductor.org/packages/release/bioc/html/tximport.html">tximport</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="tximport"><strong>???</strong></span>)</span> and <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="DESeq2"><strong>???</strong></span>)</span>. Gene annotations were obtained from <a href="https://www.ensembl.org">Ensembl</a>. Plots were generated by <a href="http://ggplot2.org">ggplot2</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="ggplot2"><strong>???</strong></span>)</span>. Heatmaps were generated by <a href="https://cran.r-project.org/web/packages/pheatmap/index.html">pheatmap</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="pheatmap"><strong>???</strong></span>)</span>.</p>
+<p>RNA-seq counts were generated by <a href="https://github.com/chapmanb/bcbio-nextgen">bcbio</a> and <a href="http://bioinformatics.sph.harvard.edu/bcbioRNASeq">bcbioRNASeq</a> using <a href="https://combine-lab.github.io/salmon">Salmon</a> <span class="citation">(Patro et al. 2017)</span>. Counts were imported into <a href="https://www.r-project.org">R</a> using <a href="https://bioconductor.org/packages/release/bioc/html/tximport.html">tximport</a> <span class="citation">(Soneson, Love, and Robinson 2016)</span> and <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> <span class="citation">(Love, Huber, and Anders 2014)</span>. Gene annotations were obtained from <a href="https://www.ensembl.org">Ensembl</a>. Plots were generated by <a href="http://ggplot2.org">ggplot2</a> <span class="citation">(Wickham 2009)</span>. Heatmaps were generated by <a href="https://cran.r-project.org/web/packages/pheatmap/index.html">pheatmap</a> <span class="citation">(Kolde 2015)</span>.</p>
 </div>
 <div id="r-session-information" class="section level1 tabset">
 <h1>R session information</h1>
@@ -3144,7 +3144,7 @@ div.tocify {
 <a class="sourceLine" id="cb49-3" data-line-number="3"><span class="op">+</span><span class="st">     </span><span class="kw">print</span>(params)</a>
 <a class="sourceLine" id="cb49-4" data-line-number="4"><span class="op">+</span><span class="st"> </span>}</a></code></pre></div>
 <pre><code>## $results_dir
-## [1] &quot;results/2018-07-28/quality_control&quot;
+## [1] &quot;results/2018-07-29/quality_control&quot;
 ## 
 ## $bcb_file
 ##                                                                      bcb 
@@ -3201,7 +3201,7 @@ div.tocify {
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       UTC                         
-##  date     2018-07-28                  
+##  date     2018-07-29                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package                * version   date      
@@ -3226,12 +3226,12 @@ div.tocify {
 ##  base64enc                0.1-3     2015-07-28
 ##  basejump               * 0.6.1     2018-07-28
 ##  bcbioBase              * 0.3.1     2018-07-28
-##  bcbioRNASeq            * 0.2.6     2018-07-28
+##  bcbioRNASeq            * 0.2.6     2018-07-29
 ##  bindr                    0.1.1     2018-03-13
 ##  bindrcpp               * 0.2.2     2018-03-29
 ##  Biobase                * 2.40.0    2018-05-07
 ##  BiocGenerics           * 0.26.0    2018-05-07
-##  BiocInstaller            1.30.0    2018-07-28
+##  BiocInstaller            1.30.0    2018-07-29
 ##  BiocParallel           * 1.14.2    2018-07-08
 ##  biomaRt                  2.36.0    2018-05-07
 ##  Biostrings               2.48.0    2018-05-07
@@ -3255,7 +3255,7 @@ div.tocify {
 ##  curl                     3.2       2018-03-28
 ##  data.table               1.11.4    2018-05-27
 ##  DBI                      1.0.0     2018-05-02
-##  DEGreport              * 1.16.0    2018-07-28
+##  DEGreport              * 1.16.0    2018-07-29
 ##  DelayedArray           * 0.6.2     2018-07-23
 ##  dendsort                 0.3.3     2015-12-14
 ##  DESeq2                 * 1.20.0    2018-05-07
@@ -3270,7 +3270,7 @@ div.tocify {
 ##  genefilter               1.62.0    2018-05-07
 ##  geneplotter              1.58.0    2018-05-07
 ##  GenomeInfoDb           * 1.16.0    2018-05-07
-##  GenomeInfoDbData         1.1.0     2018-07-28
+##  GenomeInfoDbData         1.1.0     2018-07-29
 ##  GenomicAlignments        1.16.0    2018-05-07
 ##  GenomicFeatures          1.32.0    2018-05-07
 ##  GenomicRanges          * 1.32.6    2018-07-20
@@ -3352,7 +3352,7 @@ div.tocify {
 ##  rstudioapi               0.7       2017-09-07
 ##  rtracklayer              1.40.3    2018-06-12
 ##  rvest                    0.3.2     2016-06-17
-##  S4Vectors              * 0.18.3    2018-07-28
+##  S4Vectors              * 0.18.3    2018-07-29
 ##  scales                   0.5.0     2017-08-24
 ##  sessioninfo              1.0.0     2017-06-21
 ##  shape                    1.4.4     2018-02-07
@@ -3669,6 +3669,29 @@ div.tocify {
 ## [141] assertive.properties_0.0-4    stringi_1.2.4                
 ## [143] blob_1.1.1                    AnnotationHub_2.12.0         
 ## [145] latticeExtra_0.6-28           memoise_1.1.0</code></pre>
+<div id="refs" class="references">
+<div id="ref-Jolliffe2002-jz">
+<p>Jolliffe, Ian. 2002. <em>Principal component analysis</em>. Wiley Online Library.</p>
+</div>
+<div id="ref-Kolde2015-dy">
+<p>Kolde, Raivo. 2015. <em>Pheatmap: Pretty Heatmaps</em>. <a href="https://CRAN.R-project.org/package=pheatmap" class="uri">https://CRAN.R-project.org/package=pheatmap</a>.</p>
+</div>
+<div id="ref-Love2014-sq">
+<p>Love, Michael I, Wolfgang Huber, and Simon Anders. 2014. “Moderated Estimation of Fold Change and Dispersion for RNA-seq Data with DESeq2.” <em>Genome Biol.</em> 15 (12): 550. <a href="https://doi.org/10.1186/s13059-014-0550-8" class="uri">https://doi.org/10.1186/s13059-014-0550-8</a>.</p>
+</div>
+<div id="ref-Patro2017-pi">
+<p>Patro, Rob, Geet Duggal, Michael I Love, Rafael A Irizarry, and Carl Kingsford. 2017. “Salmon Provides Fast and Bias-Aware Quantification of Transcript Expression.” <em>Nat. Methods</em> 14 (4): 417–19. <a href="https://doi.org/10.1038/nmeth.4197" class="uri">https://doi.org/10.1038/nmeth.4197</a>.</p>
+</div>
+<div id="ref-Robinson2010-np">
+<p>Robinson, Mark D, and Alicia Oshlack. 2010. “A Scaling Normalization Method for Differential Expression Analysis of RNA-seq Data.” <em>Genome Biol.</em> 11 (3): R25. <a href="https://doi.org/10.1186/gb-2010-11-3-r25" class="uri">https://doi.org/10.1186/gb-2010-11-3-r25</a>.</p>
+</div>
+<div id="ref-Soneson2016-tu">
+<p>Soneson, Charlotte, Michael I Love, and Mark D Robinson. 2016. “Differential Analyses for RNA-seq: Transcript-Level Estimates Improve Gene-Level Inferences.” <em>F1000Res.</em> 4 (December). <a href="https://doi.org/10.12688/f1000research.7563.1" class="uri">https://doi.org/10.12688/f1000research.7563.1</a>.</p>
+</div>
+<div id="ref-Wickham2009-si">
+<p>Wickham, Hadley. 2009. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Use R. Springer New York. <a href="https://doi.org/10.1007/978-0-387-98141-3" class="uri">https://doi.org/10.1007/978-0-387-98141-3</a>.</p>
+</div>
+</div>
 </div>
 </div>
 
