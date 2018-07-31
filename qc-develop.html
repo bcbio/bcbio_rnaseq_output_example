@@ -11,7 +11,7 @@
 
 <meta name="author" content />
 
-<meta name="date" content="2018-07-30" />
+<meta name="date" content="2018-07-31" />
 
 <title>Quality Control</title>
 
@@ -2861,7 +2861,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Quality Control</h1>
-<h4 class="date"><em>2018-07-30</em></h4>
+<h4 class="date"><em>2018-07-31</em></h4>
 
 </div>
 
@@ -2920,12 +2920,12 @@ div.tocify {
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="er">&gt;</span><span class="st"> </span><span class="kw">saveData</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>data_dir)</a></code></pre></div>
 <pre><code>## Saving raw_counts.rda, normalized_counts.rda, tpm.rda to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/data</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">writeCounts</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>results_dir)</a></code></pre></div>
-<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-30/quality_control</code></pre>
+<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-07-31/quality_control</code></pre>
 <p>The results are saved as gzip-compressed comma separated values (CSV). Gzip compression is natively supported on <a href="https://www.apple.com/macos">macOS</a> and Linux-based operating systems. If you’re running Windows, we recommend installing <a href="http://www.7-zip.org">7-Zip</a>. CSV files can be opened in <a href="https://products.office.com/en-us/excel">Excel</a> or <a href="https://www.rstudio.com">RStudio</a>.</p>
 <ul>
-<li><a href="results/2018-07-30/quality_control/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
-<li><a href="results/2018-07-30/quality_control/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
-<li><a href="results/2018-07-30/quality_control/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
+<li><a href="results/2018-07-31/quality_control/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
+<li><a href="results/2018-07-31/quality_control/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
+<li><a href="results/2018-07-31/quality_control/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
 </ul>
 </div>
 <div id="read-metrics" class="section level1 tabset">
@@ -3115,12 +3115,12 @@ div.tocify {
 </div>
 <div id="r-session-information" class="section level1 tabset">
 <h1>R session information</h1>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="cf">if</span> (<span class="kw">is.list</span>(params)) {</a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="op">+</span><span class="st">     </span><span class="kw">markdownHeader</span>(<span class="st">&quot;YAML params&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="op">+</span><span class="st">     </span><span class="kw">print</span>(params)</a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="op">+</span><span class="st"> </span>}</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;YAML params&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div id="yaml-params" class="section level2">
+<h2>YAML params</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">print</span>(params)</a></code></pre></div>
 <pre><code>## $results_dir
-## [1] &quot;results/2018-07-30/quality_control&quot;
+## [1] &quot;results/2018-07-31/quality_control&quot;
 ## 
 ## $bcb_file
 ##                                                                      bcb 
@@ -3128,10 +3128,11 @@ div.tocify {
 ## 
 ## $data_dir
 ## [1] &quot;data&quot;</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;`_setup.R`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;`_setup.R`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
+</div>
 <div id="setup.r" class="section level2">
 <h2><code>_setup.R</code></h2>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span>readr<span class="op">::</span><span class="kw">read_lines</span>(<span class="st">&quot;_setup.R&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">writeLines</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span>readr<span class="op">::</span><span class="kw">read_lines</span>(<span class="st">&quot;_setup.R&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">writeLines</span>()</a></code></pre></div>
 <pre><code>## library(bcbioRNASeq)
 ## library(DESeq2)
 ## library(DEGreport)
@@ -3161,11 +3162,11 @@ div.tocify {
 ##         legend_position = &quot;right&quot;
 ##     )
 ## )</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;`sessioninfo::session_info()`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;`sessioninfo::session_info()`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
 </div>
 <div id="sessioninfosession_info" class="section level2">
 <h2><code>sessioninfo::session_info()</code></h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span>sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span>sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</a></code></pre></div>
 <pre><code>## Warning: 'DESCRIPTION' file has an 'Encoding' field and re-encoding is not
 ## possible</code></pre>
 <pre><code>## ─ Session info ──────────────────────────────────────────────────────────
@@ -3177,7 +3178,7 @@ div.tocify {
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       UTC                         
-##  date     2018-07-30                  
+##  date     2018-07-31                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package                * version   date      
@@ -3200,14 +3201,14 @@ div.tocify {
 ##  assertthat               0.2.0     2017-04-11
 ##  backports                1.1.2     2017-12-13
 ##  base64enc                0.1-3     2015-07-28
-##  basejump               * 0.6.1     2018-07-28
+##  basejump               * 0.6.2     2018-07-31
 ##  bcbioBase              * 0.3.1     2018-07-28
-##  bcbioRNASeq            * 0.2.6     2018-07-30
+##  bcbioRNASeq            * 0.2.6     2018-07-31
 ##  bindr                    0.1.1     2018-03-13
 ##  bindrcpp               * 0.2.2     2018-03-29
 ##  Biobase                * 2.40.0    2018-05-07
 ##  BiocGenerics           * 0.26.0    2018-05-07
-##  BiocInstaller            1.30.0    2018-07-30
+##  BiocInstaller            1.30.0    2018-07-31
 ##  BiocParallel           * 1.14.2    2018-07-08
 ##  biomaRt                  2.36.0    2018-05-07
 ##  Biostrings               2.48.0    2018-05-07
@@ -3231,7 +3232,7 @@ div.tocify {
 ##  curl                     3.2       2018-03-28
 ##  data.table               1.11.4    2018-05-27
 ##  DBI                      1.0.0     2018-05-02
-##  DEGreport              * 1.16.0    2018-07-30
+##  DEGreport              * 1.16.0    2018-07-31
 ##  DelayedArray           * 0.6.2     2018-07-23
 ##  dendsort                 0.3.3     2015-12-14
 ##  DESeq2                 * 1.20.0    2018-05-07
@@ -3246,7 +3247,7 @@ div.tocify {
 ##  genefilter               1.62.0    2018-05-07
 ##  geneplotter              1.58.0    2018-05-07
 ##  GenomeInfoDb           * 1.16.0    2018-05-07
-##  GenomeInfoDbData         1.1.0     2018-07-30
+##  GenomeInfoDbData         1.1.0     2018-07-31
 ##  GenomicAlignments        1.16.0    2018-05-07
 ##  GenomicFeatures          1.32.0    2018-05-07
 ##  GenomicRanges          * 1.32.6    2018-07-20
@@ -3328,7 +3329,7 @@ div.tocify {
 ##  rstudioapi               0.7       2017-09-07
 ##  rtracklayer              1.40.3    2018-06-12
 ##  rvest                    0.3.2     2016-06-17
-##  S4Vectors              * 0.18.3    2018-07-30
+##  S4Vectors              * 0.18.3    2018-07-31
 ##  scales                   0.5.0     2017-08-24
 ##  sessioninfo              1.0.0     2017-06-21
 ##  shape                    1.4.4     2018-02-07
@@ -3374,7 +3375,7 @@ div.tocify {
 ##  cran (@0.2.0)                       
 ##  cran (@1.1.2)                       
 ##  cran (@0.1-3)                       
-##  Github (steinbaugh/basejump@3eaeebe)
+##  Github (steinbaugh/basejump@dee8a7b)
 ##  Github (hbc/bcbioBase@b948c95)      
 ##  local (hbc/bcbioRNASeq@NA)          
 ##  cran (@0.1.1)                       
@@ -3528,11 +3529,11 @@ div.tocify {
 ##  cran (@0.20.0)                      
 ##  cran (@2.2.0)                       
 ##  cran (@1.26.0)</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;`utils::sessionInfo()`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">markdownHeader</span>(<span class="st">&quot;`utils::sessionInfo()`&quot;</span>, <span class="dt">level =</span> <span class="dv">2</span>)</a></code></pre></div>
 </div>
 <div id="utilssessioninfo" class="section level2">
 <h2><code>utils::sessionInfo()</code></h2>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span>utils<span class="op">::</span><span class="kw">sessionInfo</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span>utils<span class="op">::</span><span class="kw">sessionInfo</span>()</a></code></pre></div>
 <pre><code>## R version 3.5.0 (2017-01-27)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
@@ -3563,7 +3564,7 @@ div.tocify {
 ## [13] quantreg_5.36               SparseM_1.77               
 ## [15] bindrcpp_0.2.2              bcbioRNASeq_0.2.6          
 ## [17] DESeq2_1.20.0               bcbioBase_0.3.1            
-## [19] basejump_0.6.1              SummarizedExperiment_1.10.1
+## [19] basejump_0.6.2              SummarizedExperiment_1.10.1
 ## [21] DelayedArray_0.6.2          BiocParallel_1.14.2        
 ## [23] matrixStats_0.54.0          Biobase_2.40.0             
 ## [25] GenomicRanges_1.32.6        GenomeInfoDb_1.16.0        
