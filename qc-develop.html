@@ -11,7 +11,7 @@
 
 <meta name="author" content />
 
-<meta name="date" content="2018-08-03" />
+<meta name="date" content="2018-08-06" />
 
 <title>Quality Control</title>
 
@@ -2861,7 +2861,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Quality Control</h1>
-<h4 class="date"><em>2018-08-03</em></h4>
+<h4 class="date"><em>2018-08-06</em></h4>
 
 </div>
 
@@ -2920,12 +2920,12 @@ div.tocify {
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="er">&gt;</span><span class="st"> </span><span class="kw">saveData</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>data_dir)</a></code></pre></div>
 <pre><code>## Saving raw_counts.rda, normalized_counts.rda, tpm.rda to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/data</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">writeCounts</span>(raw_counts, normalized_counts, tpm, <span class="dt">dir =</span> params<span class="op">$</span>results_dir)</a></code></pre></div>
-<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-08-03/quality_control</code></pre>
+<pre><code>## Writing raw_counts, normalized_counts, tpm to /home/travis/build/hbc/bcbio_rnaseq_output_example/report/results/2018-08-06/quality_control</code></pre>
 <p>The results are saved as gzip-compressed comma separated values (CSV). Gzip compression is natively supported on <a href="https://www.apple.com/macos">macOS</a> and Linux-based operating systems. If you’re running Windows, we recommend installing <a href="http://www.7-zip.org">7-Zip</a>. CSV files can be opened in <a href="https://products.office.com/en-us/excel">Excel</a> or <a href="https://www.rstudio.com">RStudio</a>.</p>
 <ul>
-<li><a href="results/2018-08-03/quality_control/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
-<li><a href="results/2018-08-03/quality_control/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
-<li><a href="results/2018-08-03/quality_control/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
+<li><a href="results/2018-08-06/quality_control/normalized_counts.csv.gz"><code>normalized_counts.csv.gz</code></a>: Use to evaluate individual genes and/or generate plots. These counts are normalized for the variation in sequencing depth across samples.</li>
+<li><a href="results/2018-08-06/quality_control/tpm.csv.gz"><code>tpm.csv.gz</code></a>: Transcripts per million, scaled by length and also suitable for plotting.</li>
+<li><a href="results/2018-08-06/quality_control/raw_counts.csv.gz"><code>raw_counts.csv.gz</code></a>: Only use to perform a new differential expression analysis. These counts will vary across samples due to differences in sequencing depth, and have not been normalized. Do not use this file for plotting genes.</li>
 </ul>
 </div>
 <div id="read-metrics" class="section level1 tabset">
@@ -3120,7 +3120,7 @@ div.tocify {
 <h2>YAML params</h2>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">print</span>(params)</a></code></pre></div>
 <pre><code>## $results_dir
-## [1] &quot;results/2018-08-03/quality_control&quot;
+## [1] &quot;results/2018-08-06/quality_control&quot;
 ## 
 ## $bcb_file
 ##                                                                      bcb 
@@ -3178,7 +3178,7 @@ div.tocify {
 ##  language (EN)                        
 ##  collate  en_US.UTF-8                 
 ##  tz       UTC                         
-##  date     2018-08-03                  
+##  date     2018-08-06                  
 ## 
 ## ─ Packages ──────────────────────────────────────────────────────────────
 ##  package                * version   date      
@@ -3201,14 +3201,14 @@ div.tocify {
 ##  assertthat               0.2.0     2017-04-11
 ##  backports                1.1.2     2017-12-13
 ##  base64enc                0.1-3     2015-07-28
-##  basejump               * 0.6.4     2018-08-03
-##  bcbioBase              * 0.3.2     2018-08-02
-##  bcbioRNASeq            * 0.2.6     2018-08-03
+##  basejump               * 0.7.0     2018-08-06
+##  bcbioBase              * 0.4.0     2018-08-06
+##  bcbioRNASeq            * 0.2.6     2018-08-06
 ##  bindr                    0.1.1     2018-03-13
 ##  bindrcpp               * 0.2.2     2018-03-29
 ##  Biobase                * 2.40.0    2018-05-07
 ##  BiocGenerics           * 0.26.0    2018-05-07
-##  BiocInstaller            1.30.0    2018-08-03
+##  BiocInstaller            1.30.0    2018-08-06
 ##  BiocParallel           * 1.14.2    2018-07-08
 ##  biomaRt                  2.36.0    2018-05-07
 ##  Biostrings               2.48.0    2018-05-07
@@ -3232,9 +3232,8 @@ div.tocify {
 ##  curl                     3.2       2018-03-28
 ##  data.table               1.11.4    2018-05-27
 ##  DBI                      1.0.0     2018-05-02
-##  DEGreport              * 1.16.0    2018-08-03
-##  DelayedArray           * 0.6.3     2018-08-01
-##  dendsort                 0.3.3     2015-12-14
+##  DEGreport              * 1.16.0    2018-08-06
+##  DelayedArray           * 0.6.4     2018-08-03
 ##  DESeq2                 * 1.20.0    2018-05-07
 ##  digest                   0.6.15    2018-01-28
 ##  dplyr                  * 0.7.6     2018-06-29
@@ -3247,7 +3246,7 @@ div.tocify {
 ##  genefilter               1.62.0    2018-05-07
 ##  geneplotter              1.58.0    2018-05-07
 ##  GenomeInfoDb           * 1.16.0    2018-05-07
-##  GenomeInfoDbData         1.1.0     2018-08-03
+##  GenomeInfoDbData         1.1.0     2018-08-06
 ##  GenomicAlignments        1.16.0    2018-05-07
 ##  GenomicFeatures          1.32.0    2018-05-07
 ##  GenomicRanges          * 1.32.6    2018-07-20
@@ -3329,7 +3328,7 @@ div.tocify {
 ##  rstudioapi               0.7       2017-09-07
 ##  rtracklayer              1.40.3    2018-06-12
 ##  rvest                    0.3.2     2016-06-17
-##  S4Vectors              * 0.18.3    2018-08-03
+##  S4Vectors              * 0.18.3    2018-08-06
 ##  scales                   0.5.0     2017-08-24
 ##  sessioninfo              1.0.0     2017-06-21
 ##  shape                    1.4.4     2018-02-07
@@ -3375,8 +3374,8 @@ div.tocify {
 ##  cran (@0.2.0)                       
 ##  cran (@1.1.2)                       
 ##  cran (@0.1-3)                       
-##  Github (steinbaugh/basejump@f6e986f)
-##  Github (hbc/bcbioBase@edddc84)      
+##  Github (steinbaugh/basejump@ef72bf4)
+##  Github (hbc/bcbioBase@20ca982)      
 ##  local (hbc/bcbioRNASeq@NA)          
 ##  cran (@0.1.1)                       
 ##  cran (@0.2.2)                       
@@ -3408,7 +3407,6 @@ div.tocify {
 ##  cran (@1.0.0)                       
 ##  Bioconductor                        
 ##  Bioconductor                        
-##  cran (@0.3.3)                       
 ##  cran (@1.20.0)                      
 ##  CRAN (R 3.5.0)                      
 ##  cran (@0.7.6)                       
@@ -3563,9 +3561,9 @@ div.tocify {
 ## [11] knitr_1.20                  DEGreport_1.16.0           
 ## [13] quantreg_5.36               SparseM_1.77               
 ## [15] bindrcpp_0.2.2              bcbioRNASeq_0.2.6          
-## [17] DESeq2_1.20.0               bcbioBase_0.3.2            
-## [19] basejump_0.6.4              SummarizedExperiment_1.10.1
-## [21] DelayedArray_0.6.3          BiocParallel_1.14.2        
+## [17] DESeq2_1.20.0               bcbioBase_0.4.0            
+## [19] basejump_0.7.0              SummarizedExperiment_1.10.1
+## [21] DelayedArray_0.6.4          BiocParallel_1.14.2        
 ## [23] matrixStats_0.54.0          Biobase_2.40.0             
 ## [25] GenomicRanges_1.32.6        GenomeInfoDb_1.16.0        
 ## [27] IRanges_2.14.10             S4Vectors_0.18.3           
@@ -3607,45 +3605,45 @@ div.tocify {
 ##  [63] plyr_1.8.4                    base64enc_0.1-3              
 ##  [65] progress_1.1.2                zlibbioc_1.26.0              
 ##  [67] RCurl_1.95-4.11               prettyunits_1.0.2            
-##  [69] dendsort_0.3.3                rpart_4.1-13                 
+##  [69] rpart_4.1-13                  viridis_0.5.1                
 ##  [71] pbapply_1.3-4                 GetoptLong_0.1.6             
-##  [73] viridis_0.5.1                 cowplot_0.9.3                
-##  [75] haven_1.1.2                   grr_0.9.5                    
-##  [77] ggrepel_0.8.0                 cluster_2.0.7-1              
-##  [79] magrittr_1.5                  data.table_1.11.4            
-##  [81] assertive.data_0.0-1          circlize_0.4.3               
-##  [83] ProtGenerics_1.12.0           hms_0.4.2                    
-##  [85] mime_0.5                      evaluate_0.10.1              
-##  [87] xtable_1.8-2                  XML_3.98-1.11                
-##  [89] readxl_1.1.0                  gridExtra_2.3                
-##  [91] shape_1.4.4                   compiler_3.5.0               
-##  [93] biomaRt_2.36.0                crayon_1.3.4                 
-##  [95] R.oo_1.22.0                   htmltools_0.3.6              
-##  [97] later_0.7.1                   Formula_1.2-2                
-##  [99] geneplotter_1.58.0            lubridate_1.7.4              
-## [101] DBI_1.0.0                     assertive.files_0.0-2        
-## [103] ComplexHeatmap_1.18.0         assertive.numbers_0.0-2      
-## [105] Matrix_1.2-14                 cli_1.0.0                    
-## [107] vsn_3.48.1                    assertive.types_0.0-3        
-## [109] R.methodsS3_1.7.1             bindr_0.1.1                  
-## [111] pkgconfig_2.0.1               GenomicAlignments_1.16.0     
-## [113] foreign_0.8-70                xml2_1.2.0                   
-## [115] annotate_1.58.0               XVector_0.20.0               
-## [117] rvest_0.3.2                   digest_0.6.15                
-## [119] ConsensusClusterPlus_1.44.0   assertive.code_0.0-1         
-## [121] Biostrings_2.48.0             cellranger_1.1.0             
-## [123] htmlTable_1.11.2              edgeR_3.22.3                 
-## [125] curl_3.2                      shiny_1.0.5                  
-## [127] Rsamtools_1.32.0              rjson_0.2.15                 
-## [129] nlme_3.1-137                  jsonlite_1.5                 
-## [131] viridisLite_0.3.0             limma_3.36.2                 
-## [133] pillar_1.2.1                  lattice_0.20-35              
-## [135] Nozzle.R1_1.1-1               httr_1.3.1                   
-## [137] survival_2.41-3               interactiveDisplayBase_1.18.0
-## [139] glue_1.2.0                    bit_1.1-12                   
-## [141] assertive.properties_0.0-4    stringi_1.2.4                
-## [143] blob_1.1.1                    AnnotationHub_2.12.0         
-## [145] latticeExtra_0.6-28           memoise_1.1.0</code></pre>
+##  [73] cowplot_0.9.3                 grr_0.9.5                    
+##  [75] haven_1.1.2                   ggrepel_0.8.0                
+##  [77] cluster_2.0.7-1               magrittr_1.5                 
+##  [79] data.table_1.11.4             assertive.data_0.0-1         
+##  [81] circlize_0.4.3                ProtGenerics_1.12.0          
+##  [83] hms_0.4.2                     mime_0.5                     
+##  [85] evaluate_0.10.1               xtable_1.8-2                 
+##  [87] XML_3.98-1.11                 readxl_1.1.0                 
+##  [89] gridExtra_2.3                 shape_1.4.4                  
+##  [91] compiler_3.5.0                biomaRt_2.36.0               
+##  [93] crayon_1.3.4                  R.oo_1.22.0                  
+##  [95] htmltools_0.3.6               later_0.7.1                  
+##  [97] Formula_1.2-2                 geneplotter_1.58.0           
+##  [99] lubridate_1.7.4               DBI_1.0.0                    
+## [101] assertive.files_0.0-2         ComplexHeatmap_1.18.0        
+## [103] assertive.numbers_0.0-2       Matrix_1.2-14                
+## [105] cli_1.0.0                     vsn_3.48.1                   
+## [107] assertive.types_0.0-3         R.methodsS3_1.7.1            
+## [109] bindr_0.1.1                   pkgconfig_2.0.1              
+## [111] GenomicAlignments_1.16.0      foreign_0.8-70               
+## [113] xml2_1.2.0                    annotate_1.58.0              
+## [115] XVector_0.20.0                rvest_0.3.2                  
+## [117] digest_0.6.15                 ConsensusClusterPlus_1.44.0  
+## [119] assertive.code_0.0-1          Biostrings_2.48.0            
+## [121] cellranger_1.1.0              htmlTable_1.11.2             
+## [123] edgeR_3.22.3                  curl_3.2                     
+## [125] shiny_1.0.5                   Rsamtools_1.32.0             
+## [127] rjson_0.2.15                  nlme_3.1-137                 
+## [129] jsonlite_1.5                  viridisLite_0.3.0            
+## [131] limma_3.36.2                  pillar_1.2.1                 
+## [133] lattice_0.20-35               Nozzle.R1_1.1-1              
+## [135] httr_1.3.1                    survival_2.41-3              
+## [137] interactiveDisplayBase_1.18.0 glue_1.2.0                   
+## [139] bit_1.1-12                    assertive.properties_0.0-4   
+## [141] stringi_1.2.4                 blob_1.1.1                   
+## [143] AnnotationHub_2.12.0          latticeExtra_0.6-28          
+## [145] memoise_1.1.0</code></pre>
 <div id="refs" class="references">
 <div id="ref-Jolliffe2002-jz">
 <p>Jolliffe, Ian. 2002. <em>Principal component analysis</em>. Wiley Online Library.</p>
